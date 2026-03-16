@@ -157,6 +157,17 @@ img {
   /* Smooth touch scrolling */
   html { -webkit-overflow-scrolling: touch; }
 
+  /* Disable reveal animations — instant display on mobile */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .reveal.visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   /* Nav — topbar hidden so nav goes to top */
   nav, .nav { top: 0 !important; padding: 8px 0 !important; }
   .nav-links, .nav-ctas { display: none !important; }
