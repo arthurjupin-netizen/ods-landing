@@ -1136,7 +1136,6 @@
     document.getElementById('mobileMenu').classList.toggle('open');
     document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
   }
-  document.getElementById('navBurger').addEventListener('click', toggleMenu);
 
   // ─── INTERSECTION OBSERVER (REVEAL) ───
   const observer = new IntersectionObserver((entries) => {

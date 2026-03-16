@@ -481,7 +481,6 @@ function toggleVM(){
   document.body.style.overflow=m.classList.contains('open')?'hidden':'';
 }
 var burger=document.getElementById('navBurger');
-if(burger)burger.addEventListener('click',toggleVM);
 // Reveal
 var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
