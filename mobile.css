@@ -116,7 +116,7 @@ img {
 
 /* ─── TABLET BREAKPOINT (1100px) ─── */
 @media (max-width: 1100px) {
-  .nav-links, .nav-ctas { display: none !important; }
+  .nav-links, .nav-ctas, div.nav-cta { display: none !important; }
   .nav-burger { display: flex !important; }
   /* Phone number in nav */
   .nav-phone-mobile {
@@ -170,9 +170,9 @@ img {
 
   /* Nav — topbar hidden so nav goes to top */
   nav, .nav { top: 0 !important; padding: 8px 0 !important; }
-  .nav-links, .nav-ctas { display: none !important; }
+  .nav-links, .nav-ctas, div.nav-cta { display: none !important; }
   .nav-burger { display: flex !important; }
-  .nav-logo img { height: 42px !important; }
+  .nav-logo img, .logo img { height: 42px !important; }
   .topbar { display: none !important; }
   .nav + *:not(.hero):not(.page-hero):not(.legal-hero):not(#hero) { padding-top: 56px !important; }
 
