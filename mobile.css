@@ -89,7 +89,7 @@
   color: #FBFBF4;
   font-size: 28px;
   cursor: pointer;
-  z-index: 10001;
+  z-index: 100000;
   transition: transform .3s ease;
 }
 .mobile-menu-close-shared:hover { transform: rotate(90deg); }

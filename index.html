@@ -270,7 +270,7 @@
       background: transparent;
       color: var(--white);
       border: 1.5px solid rgba(251,251,244,0.3);
-      -webkit-backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
     }
     .btn-ghost:hover {
       background: rgba(251,251,244,0.1);
@@ -306,9 +306,9 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1600px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 48px;
     }
 
     /* ─── ABOUT ODS ─── */
@@ -439,8 +439,7 @@
       position: absolute;
       bottom: 20px; left: 20px;
       background: rgba(60,35,15,0.82);
-      -webkit-backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
       border: 1px solid rgba(255,123,0,0.3);
       border-radius: 12px;
       padding: 12px 18px;
@@ -797,7 +796,7 @@
       border: 1px solid rgba(251,251,244,0.1);
       border-radius: 24px;
       padding: 32px;
-      -webkit-backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
       width: 100%;
       max-width: 400px;
     }
@@ -1699,7 +1698,7 @@
       color: var(--white);
       font-size: 28px;
       cursor: pointer;
-      z-index: 10001;
+      z-index: 100000;
       transition: transform .3s ease;
     }
     .mobile-menu-close:hover { transform: rotate(90deg); }
@@ -2068,7 +2067,7 @@
     .sim-slider-row { display: flex; align-items: center; gap: 16px; }
     .sim-slider {
       -webkit-appearance: none; appearance: none;
-      width: 100%; height: 4px;
+      flex: 1; min-width: 0; height: 4px;
       background: rgba(255,255,255,.1); border-radius: 4px; outline: none; cursor: pointer;
     }
     .sim-slider::-webkit-slider-thumb {
@@ -2289,9 +2288,9 @@
 
       /* Simulator section */
       #simulator { padding: 60px 0; }
-      .sim-layout { grid-template-columns: 1fr !important; gap: 24px; }
-      .sim-results { grid-template-columns: 1fr 1fr !important; gap: 12px; }
-      .sim-controls { padding: 24px 20px; }
+      .sim-layout { grid-template-columns: minmax(0, 1fr) !important; gap: 24px; }
+      .sim-results { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; gap: 12px; }
+      .sim-controls { padding: 24px 20px; min-width: 0; max-width: 100%; overflow: hidden; }
       .sim-radios { flex-wrap: wrap; }
       .sim-radio-label { font-size: 11px; padding: 8px 12px; }
 
@@ -2426,7 +2425,7 @@
       <a href="sav.html" class="nav-link">SAV</a>
     </div>
     <div class="nav-ctas">
-      <a href="sav.html" class="nav-contact-btn">Contact</a>
+      <a href="nous-contacter.html" class="nav-contact-btn">Contact</a>
       <a href="nous-contacter.html" class="nav-cta">Bilan gratuit</a>
     </div>
     <a href="tel:0805037036" class="nav-phone-mobile" aria-label="Appeler ODS"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.2 1.6C3.1 1.5 2.9 1.4 2.7 1.5L1.2 2.2C0.9 2.3 0.7 2.6 0.7 2.9C0.8 6.1 2.1 9.1 4.3 11.4C6.5 13.6 9.5 14.9 12.7 15C13 15 13.3 14.8 13.4 14.5L14.1 13C14.2 12.8 14.1 12.6 14 12.5L11.5 10.5C11.4 10.4 11.2 10.4 11 10.5L9.7 11.2C9.5 11.3 9.3 11.3 9.1 11.2C8.1 10.6 7.2 9.8 6.5 8.8C5.8 7.9 5.3 6.8 5.1 5.7C5.1 5.5 5.1 5.3 5.2 5.1L5.9 3.8C6 3.6 6 3.4 5.9 3.3L3.2 1.6Z" fill="#FF7B00"/></svg><span>0 805 037 036</span></a>
@@ -2622,22 +2621,13 @@
 </section>
 
 <!-- ═══════════ SOLUTIONS ═══════════ -->
-<section id="contact">
+<section id="contact" style="background: var(--dark-bg); padding: 100px 0 90px; position: relative; overflow: hidden;">
   <div class="container">
     <div class="cta-final-inner reveal">
       <div class="cta-final-eyebrow">Bilan gratuit</div>
       <h2 class="cta-final-title">Obtenez votre bilan énergétique gratuit en 48h</h2>
       <p class="cta-final-sub">Un conseiller ODS vous rappelle, analyse votre situation et vous présente les meilleures solutions adaptées à votre logement.</p>
-      <form class="cta-form" id="ctaForm">
-        <input type="hidden" name="_subject" value="Demande bilan gratuit — ODS Courtage"/>
-        <input type="hidden" name="_template" value="table"/>
-        <input type="hidden" name="_captcha" value="false"/>
-        <input type="text" name="_honey" style="display:none"/>
-        <input type="text" name="nom" class="cta-field" placeholder="Votre prénom et nom" required/>
-        <input type="tel" name="telephone" class="cta-field" placeholder="Votre téléphone" required/>
-        <input type="email" name="email" class="cta-field full" placeholder="Votre adresse email" required/>
-        <button type="submit" class="cta-submit" id="ctaFormBtn">Obtenir mon bilan gratuit →</button>
-      </form>
+      <a href="nous-contacter.html" class="cta-submit" style="display:inline-block;text-align:center;text-decoration:none;max-width:500px;margin:0 auto;">Obtenir mon bilan gratuit →</a>
       <p class="cta-trust">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L8.6 5.4H13.7L9.8 8.3L11.2 12.7L7 10L2.8 12.7L4.2 8.3L0.3 5.4H5.4L7 1Z" fill="#FF7B00"/></svg>
         Sans engagement · Données confidentielles · Réponse sous 48h
@@ -3988,29 +3978,6 @@
     });
   });
 
-  // ─── CTA FORM (Formsubmit AJAX) ───
-  (function() {
-    var form = document.getElementById('ctaForm');
-    if (!form) return;
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var btn = document.getElementById('ctaFormBtn');
-      btn.disabled = true;
-      btn.textContent = 'Envoi en cours...';
-      fetch('https://formsubmit.co/ajax/contact@odscourtage.com', {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(function(r) { return r.json(); }).then(function(data) {
-        if (data.success) {
-          btn.textContent = '✓ Demande envoyée !';
-          btn.style.background = '#28B450';
-          form.reset();
-          setTimeout(function() { btn.disabled = false; btn.textContent = 'Obtenir mon bilan gratuit →'; btn.style.background = ''; }, 4000);
-        } else { btn.disabled = false; btn.textContent = 'Erreur, réessayez'; }
-      }).catch(function() { btn.disabled = false; btn.textContent = 'Erreur, réessayez'; });
-    });
-  })();
 
   // ─── FOOTER CONTACT FORM (Formsubmit AJAX) ───
   (function() {
@@ -4105,15 +4072,6 @@
   const cmpSchema = document.querySelector('.cmp-schema');
   if (cmpSchema) cmpObserver.observe(cmpSchema);
 
-  // ─── SOLUTIONS CAROUSEL ───
-  (function() {
-    const track   = document.getElementById('solutionsTrack');
-    const prevBtn = document.getElementById('solPrev');
-    const nextBtn = document.getElementById('solNext');
-    const dotsEl  = document.getElementById('solDots');
-    if (!track) return;
-
-  })();
 
   // ─── PARTNER CARD CLICK → OPEN SITE ───
   document.querySelectorAll('.partner-card[data-href]').forEach(function(card) {
@@ -4145,7 +4103,7 @@
       });
 
       if (closest) {
-        const type = closest.dataset.type; // 'rge' | 'finance'
+        const type = closest.dataset.type;
         if (type !== lastType) {
           lastType = type;
           if (type === 'rge') {
@@ -4155,9 +4113,8 @@
           }
         }
       }
-      requestAnimationFrame(detectCenter);
     }
-    detectCenter();
+    setInterval(detectCenter, 500);
   })();
 
   // ─── NAV ACTIVE LINK ───
