@@ -336,6 +336,24 @@ img {
   .testi-mini-card { padding: 24px 20px !important; }
 }
 
+/* ─── RESPONSIVE 600px — intermediate ─── */
+@media (max-width: 600px) {
+  /* Section padding reduction */
+  section { padding-top: 48px !important; padding-bottom: 48px !important; }
+  #hero, .hero, .page-hero, .legal-hero { padding: 80px 0 48px !important; }
+
+  /* Hero titles */
+  .hero-title, .page-title, .page-hero h1 { font-size: clamp(24px, 7vw, 38px) !important; }
+  .hero-sub, .page-hero p { font-size: 14px !important; }
+
+  /* Product pages — timeline, savings */
+  #timeline, .timeline-section { padding: 48px 0 !important; }
+  .savings-section, #savings { padding: 48px 0 !important; }
+
+  /* Footer gap */
+  .footer-main-grid { gap: 24px !important; }
+}
+
 @media (max-width: 480px) {
   .hero-title, .page-title {
     font-size: 26px !important;
@@ -345,6 +363,10 @@ img {
     grid-template-columns: 1fr !important;
     grid-template-rows: auto !important;
   }
+
+  /* Section padding — tighter */
+  section { padding-top: 40px !important; padding-bottom: 40px !important; }
+  #hero, .hero, .page-hero, .legal-hero { padding: 72px 0 40px !important; }
 
   /* Diagrams — even smaller zoom on tiny screens */
   .sol-diagram, .bat-diagram, .pac-diagram, .pae-diagram, .vmc-diagram, .ev-diagram {
@@ -359,4 +381,44 @@ img {
     padding: 20px 16px !important;
   }
   .testi-text { font-size: 12px !important; line-height: 1.6 !important; }
+
+  /* Stats grids */
+  .stats-dark-grid, .stats-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .stats-dark-item { padding: 24px 16px !important; }
+
+  /* Footer */
+  .footer-main-grid { gap: 20px !important; }
+  .footer-form-card { padding: 24px 16px !important; }
+}
+
+/* ─── RESPONSIVE 375px — iPhone SE / small mobile ─── */
+@media (max-width: 375px) {
+  .hero-title, .page-title, .page-hero h1 { font-size: 22px !important; }
+  .hero-sub, .page-hero p { font-size: 13px !important; }
+  .section-h2 { font-size: 20px !important; }
+
+  /* Section padding — minimal */
+  section { padding-top: 32px !important; padding-bottom: 32px !important; }
+  #hero, .hero, .page-hero, .legal-hero { padding: 64px 0 32px !important; }
+
+  /* Container padding */
+  .container { padding-left: 12px !important; padding-right: 12px !important; }
+
+  /* Burger menu text */
+  .mobile-menu-shared a { font-size: 15px; }
+  .mobile-menu-shared .mm-cta { padding: 12px 28px; font-size: 14px; }
+
+  /* Cards and items */
+  .testi-card {
+    width: calc(92vw - 12px) !important;
+    min-width: calc(92vw - 12px) !important;
+    padding: 16px 12px !important;
+  }
+
+  /* Buttons */
+  .btn, .cta-btn, [class*="btn"] { font-size: 14px !important; padding: 12px 24px !important; }
+
+  /* Footer */
+  .footer-white { padding: 32px 12px 40px !important; }
+  .footer-form-card h2 { font-size: 18px !important; }
 }

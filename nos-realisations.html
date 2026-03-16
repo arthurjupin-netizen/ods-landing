@@ -255,7 +255,7 @@
       color: var(--gray);
       cursor: pointer;
       transition: var(--transition);
-      user-select: none;
+      -webkit-user-select: none; -moz-user-select: none; user-select: none;
     }
     .filter-label:hover { border-color: var(--orange); color: var(--orange); }
     .filter-radio:checked + .filter-label {
@@ -607,7 +607,7 @@
     .nav.scrolled { top: 0; }
     .nav + *:not(.hero):not(.page-hero):not(.legal-hero):not(#hero) { padding-top:64px; }
   @media(hover:none),(pointer:coarse){#cursor,.cursor,#cursorRing,.cursor-ring{display:none!important;width:0!important;height:0!important}}</style>
-<link rel="stylesheet" href="mobile.css?v=5">
+<link rel="stylesheet" href="mobile.css?v=6">
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Nos Réalisations — ODS Courtage" />
   <meta name="twitter:description" content="Découvrez nos installations solaires, pompes à chaleur et bornes de recharge. Projets réels, économies mesurées partout en France." />
