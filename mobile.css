@@ -146,8 +146,9 @@ img {
 
 /* ─── TOUCH DEVICES — disable custom cursor + fix scroll ─── */
 @media (hover: none), (pointer: coarse) {
-  *, body, a, button, input, select, textarea { cursor: auto !important; }
-  #cursor, #cursor-ring, #cursorRing, .cursor-dot, .cursor-ring { display: none !important; opacity: 0 !important; pointer-events: none !important; }
+  *, body, a, button, input, select, textarea { cursor: auto !important; -webkit-tap-highlight-color: transparent !important; }
+  #cursor, #cursor-ring, #cursorRing, .cursor-dot, .cursor-ring,
+  .cursor, .cursor-ring { display: none !important; opacity: 0 !important; pointer-events: none !important; width: 0 !important; height: 0 !important; }
   /* Prevent touch scroll blocking */
   body { touch-action: manipulation; -webkit-overflow-scrolling: touch; }
   section, div, main { touch-action: pan-y pan-x; }
