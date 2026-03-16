@@ -306,6 +306,17 @@ img {
     flex-wrap: wrap !important; gap: 12px !important; justify-content: center !important;
   }
 
+  /* ─── TIMELINE — reduce left padding on mobile ─── */
+  .timeline-track { padding-left: 32px !important; }
+  .tl-item { padding-left: 32px !important; }
+
+  /* ─── SECTION INTRO / SAVINGS — reduce gap ─── */
+  .section-intro { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .savings-layout { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+  /* ─── FAQ — constrain width ─── */
+  .faq-list { max-width: 100% !important; }
+
   /* ─── TESTIMONIALS — responsive ─── */
   .testi-mini-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
   .testi-card {
