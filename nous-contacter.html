@@ -43,8 +43,8 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black:    #140A00;
-      --dark-bg:  #3d2815;
+      --black:    #2A1A0A;
+      --dark-bg:  #5A3D20;
       --orange:   #FF7B00;
       --yellow:   #FFC300;
       --white:    #FBFBF4;
@@ -138,7 +138,7 @@
     .topbar {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 1010; height: 40px;
-      background: rgba(20,10,0,0.96);
+      background: rgba(60,35,15,0.96);
       border-bottom: 1px solid rgba(255,123,0,0.18);
       display: flex; align-items: center; justify-content: center;
       transition: transform 0.35s ease;
@@ -190,7 +190,7 @@
     /* ─── MOBILE MENU ─── */
     .mobile-menu {
       display: none; position: fixed; inset: 0; background: var(--dark-bg);
-      z-index: 10000; flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+      z-index: 99999; flex-direction: column; align-items: center; justify-content: center; gap: 32px;
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu a { font-size: 28px; font-weight: 700; color: var(--white); text-decoration: none; transition: var(--transition); }
@@ -497,7 +497,7 @@
       .footer-nav-cols { grid-template-columns: 1fr; gap: 28px; }
     }
   </style>
-<link rel="stylesheet" href="mobile.css?v=2">
+<link rel="stylesheet" href="mobile.css?v=3">
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Contact — ODS Courtage | Bilan Énergétique Gratuit" />
   <meta name="twitter:description" content="Contactez ODS Courtage pour votre projet d'énergie renouvelable. Bilan gratuit sous 24h. Numéro vert : 0 805 037 036." />

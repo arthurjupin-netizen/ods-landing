@@ -103,7 +103,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Roman&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--black:#140A00;--dark-bg:#3d2815;--orange:#FF7B00;--yellow:#FFC300;--white:#FBFBF4;--gray:#8A8070;--grad:linear-gradient(135deg,#FF7B00,#FFC300);--ease:cubic-bezier(.4,0,.2,1)}
+    :root{--black:#2A1A0A;--dark-bg:#5A3D20;--orange:#FF7B00;--yellow:#FFC300;--white:#FBFBF4;--gray:#8A8070;--grad:linear-gradient(135deg,#FF7B00,#FFC300);--ease:cubic-bezier(.4,0,.2,1)}
     html{scroll-behavior:smooth}
     body{font-family:'Inter',sans-serif;background:var(--dark-bg);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
     h1,h2,h3{font-family:'Crimson Roman',serif}
@@ -207,7 +207,7 @@
       .hero h1{font-size:1.6rem}
     }
     /* Mobile menu overlay */
-    .vm-menu{position:fixed;inset:0;background:#3d2815;z-index:10000;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:16px;padding:90px 24px 40px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .35s ease,visibility .35s ease,transform .35s ease}
+    .vm-menu{position:fixed;inset:0;background:#5A3D20;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:16px;padding:90px 24px 40px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .35s ease,visibility .35s ease,transform .35s ease}
     .vm-menu.open{opacity:1;visibility:visible;transform:translateY(0)}
     .vm-menu a{font-family:'Inter',sans-serif;font-size:18px;font-weight:600;color:#FBFBF4;text-decoration:none;transition:color .2s ease,transform .2s ease,opacity .3s ease;opacity:0;transform:translateY(8px)}
     .vm-menu.open a{opacity:1;transform:translateY(0)}
@@ -224,7 +224,7 @@
     .vm-menu.open a:nth-child(12){transition-delay:.38s}
     .vm-menu a:hover{color:#FF7B00;transform:translateX(4px)}
     .vm-menu .vm-sep{width:60px;height:1px;background:rgba(255,123,0,.3);margin:8px 0}
-    .vm-menu .vm-cta{margin-top:16px;padding:14px 36px;background:linear-gradient(90deg,#FF7B00,#FFC300);color:#140A00!important;border-radius:100px;font-weight:700;font-size:16px}
+    .vm-menu .vm-cta{margin-top:16px;padding:14px 36px;background:linear-gradient(90deg,#FF7B00,#FFC300);color:#2A1A0A!important;border-radius:100px;font-weight:700;font-size:16px}
     .vm-close{position:fixed;top:20px;right:24px;background:none;border:none;color:#FBFBF4;font-size:28px;cursor:pointer;z-index:10001;transition:transform .3s ease}
     .vm-close:hover{transform:rotate(90deg)}
   </style>
