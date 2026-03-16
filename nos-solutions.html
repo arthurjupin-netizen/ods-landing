@@ -317,53 +317,6 @@
     .nav-links a.active { color: var(--orange); }
     .nav-links a.active::after { transform: scaleX(1); }
     .nav-cta { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px; height: 2px;
-      background: var(--white);
-      border-radius: 2px;
-      transition: var(--transition);
-    }
-
-    /* ─── MOBILE MENU ─── */
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: var(--dark-bg);
-      z-index: 99999;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--white);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .mobile-menu a:hover { color: var(--orange); }
-    .mobile-menu-close {
-      position: absolute;
-      top: 20px; right: 24px;
-      background: none; border: none;
-      color: var(--white);
-      font-size: 28px;
-      cursor: pointer;
-    }
-
     /* ─── HERO ─── */
     .page-hero {
       min-height: 60vh;
@@ -808,8 +761,7 @@
     @media (max-width: 768px) {
       .topbar-inner { justify-content: center; padding: 0 16px; }
       .topbar-sep { display: none; }
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
+      .nav-links, .nav-ctas { display: none; }
       .logo img { height: 42px !important; }
       .benefits-grid { grid-template-columns: 1fr; }
       .footer-main { grid-template-columns: 1fr; gap: 36px; }
@@ -852,8 +804,8 @@
 </div>
 
 <!-- ═══════════ MOBILE MENU ═══════════ -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" onclick="toggleMenu()">&#x2715;</button>
+<div class="mobile-menu-shared" id="mobileMenu">
+  <button class="mobile-menu-close-shared" onclick="toggleMenu()">&#x2715;</button>
   <a href="nos-solutions.html" onclick="toggleMenu()">Nos Solutions</a>
   <a href="abonnement-solaire.html" onclick="toggleMenu()">Abonnement solaire</a>
   <a href="index.html#why" onclick="toggleMenu()">Pourquoi ODS</a>
@@ -861,7 +813,8 @@
   <a href="nos-realisations.html" onclick="toggleMenu()">Nos réalisations</a>
   <a href="comment-ca-marche.html" onclick="toggleMenu()">Comment ça marche</a>
   <a href="nous-contacter.html" onclick="toggleMenu()">Nous contacter</a>
-  <a href="nous-contacter.html" class="btn btn-primary" onclick="toggleMenu()">Demander un bilan</a>
+  <div class="mm-separator"></div>
+  <a href="nous-contacter.html" class="mm-cta" onclick="toggleMenu()">Bilan gratuit</a>
 </div>
 
 <!-- ═══════════ NAVBAR ═══════════ -->
