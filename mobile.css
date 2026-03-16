@@ -108,6 +108,9 @@
 }
 .mobile-menu-close-shared:hover { transform: rotate(90deg); }
 
+/* ─── SCROLL — compenser le header fixe ─── */
+section[id] { scroll-margin-top: 90px; }
+
 /* ─── FLUIDITÉ GLOBALE ─── */
 * {
   -webkit-font-smoothing: antialiased;

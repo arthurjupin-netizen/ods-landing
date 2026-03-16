@@ -1133,7 +1133,7 @@
   }, { passive: true });
 
   // ─── MOBILE MENU ───
-  function toggleMenu() {
+  function toggleMenu() { var burger=document.getElementById("navBurger"); if(burger) burger.classList.toggle("open");
     document.getElementById('mobileMenu').classList.toggle('open');
     document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
   }
