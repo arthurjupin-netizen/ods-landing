@@ -7,8 +7,12 @@
 .nav-burger {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
-  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
   background: none;
   border: none;
   cursor: pointer;
