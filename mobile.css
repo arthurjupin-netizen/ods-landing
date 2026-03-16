@@ -1,0 +1,328 @@
+/* ═══════════════════════════════════════════════════
+   ODS Courtage — Responsive Mobile (partagé)
+   Inclure dans toutes les pages via <link>
+   ═══════════════════════════════════════════════════ */
+
+/* ─── BURGER ANIMATION (hamburger ↔ X) ─── */
+.nav-burger { padding: 8px; }
+.nav-burger span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: #140A00;
+  border-radius: 2px;
+  transition: all .3s ease;
+  transform-origin: center;
+}
+.nav-burger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ─── MOBILE MENU OVERLAY ─── */
+.mobile-menu-shared {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,8,2,0.97);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 90px 24px 40px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity .35s ease, visibility .35s ease, transform .35s ease;
+}
+.mobile-menu-shared.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.mobile-menu-shared a {
+  font-family: 'Inter', 'Raleway', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FBFBF4;
+  text-decoration: none;
+  transition: color .2s ease, transform .2s ease, opacity .3s ease;
+  opacity: 0;
+  transform: translateY(8px);
+}
+.mobile-menu-shared.open a {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Stagger animation */
+.mobile-menu-shared.open a:nth-child(2) { transition-delay: .05s; }
+.mobile-menu-shared.open a:nth-child(3) { transition-delay: .08s; }
+.mobile-menu-shared.open a:nth-child(4) { transition-delay: .11s; }
+.mobile-menu-shared.open a:nth-child(5) { transition-delay: .14s; }
+.mobile-menu-shared.open a:nth-child(6) { transition-delay: .17s; }
+.mobile-menu-shared.open a:nth-child(7) { transition-delay: .2s; }
+.mobile-menu-shared.open a:nth-child(8) { transition-delay: .26s; }
+.mobile-menu-shared.open a:nth-child(9) { transition-delay: .29s; }
+.mobile-menu-shared.open a:nth-child(10) { transition-delay: .32s; }
+.mobile-menu-shared.open a:nth-child(11) { transition-delay: .35s; }
+.mobile-menu-shared.open a:nth-child(12) { transition-delay: .38s; }
+.mobile-menu-shared a:hover { color: #FF7B00; transform: translateX(4px); }
+.mobile-menu-shared .mm-separator {
+  width: 60px; height: 1px;
+  background: rgba(255,123,0,.3);
+  margin: 8px 0;
+}
+.mobile-menu-shared .mm-cta {
+  margin-top: 16px;
+  padding: 14px 36px;
+  background: linear-gradient(90deg, #FF7B00, #FFC300);
+  color: #140A00 !important;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 16px;
+}
+.mobile-menu-close-shared {
+  position: fixed;
+  top: 20px; right: 24px;
+  background: none; border: none;
+  color: #FBFBF4;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 10001;
+  transition: transform .3s ease;
+}
+.mobile-menu-close-shared:hover { transform: rotate(90deg); }
+
+/* ─── FLUIDITÉ GLOBALE ─── */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a, button, input, select, textarea {
+  transition: color .3s cubic-bezier(0.4,0,0.2,1),
+              background .3s cubic-bezier(0.4,0,0.2,1),
+              border-color .3s cubic-bezier(0.4,0,0.2,1),
+              transform .3s cubic-bezier(0.4,0,0.2,1),
+              box-shadow .3s cubic-bezier(0.4,0,0.2,1),
+              opacity .3s cubic-bezier(0.4,0,0.2,1);
+}
+img {
+  transition: transform .4s cubic-bezier(0.4,0,0.2,1), opacity .4s ease;
+}
+.nav-phone-mobile { display: none !important; }
+
+/* ─── TABLET BREAKPOINT (1100px) ─── */
+@media (max-width: 1100px) {
+  .nav-links, .nav-ctas { display: none !important; }
+  .nav-burger { display: flex !important; }
+  /* Phone number in nav */
+  .nav-phone-mobile {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none !important;
+    font-family: 'Inter', 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #140A00 !important;
+    margin-left: auto;
+    margin-right: 8px;
+    white-space: nowrap;
+  }
+  .nav-phone-mobile:hover { opacity: .7; }
+  .nav-phone-mobile svg { flex-shrink: 0; }
+}
+
+/* ─── TOUCH DEVICES — disable custom cursor + fix scroll ─── */
+@media (hover: none), (pointer: coarse) {
+  *, body, a, button, input, select, textarea { cursor: auto !important; }
+  #cursor, #cursor-ring, #cursorRing, .cursor-dot, .cursor-ring { display: none !important; opacity: 0 !important; pointer-events: none !important; }
+  /* Prevent touch scroll blocking */
+  body { touch-action: manipulation; -webkit-overflow-scrolling: touch; }
+  section, div, main { touch-action: pan-y pan-x; }
+}
+
+/* ─── RESPONSIVE 768px ─── */
+@media (max-width: 768px) {
+  /* Prevent horizontal overflow */
+  html, body { overflow-x: hidden !important; max-width: 100vw; }
+
+  /* Disable custom cursor on mobile */
+  *, body { cursor: auto !important; }
+  #cursor, #cursor-ring, #cursorRing, .cursor-dot, .cursor-ring { display: none !important; }
+
+  /* Smooth touch scrolling */
+  html { -webkit-overflow-scrolling: touch; }
+
+  /* Nav — topbar hidden so nav goes to top */
+  nav, .nav { top: 0 !important; padding: 8px 0 !important; }
+  .nav-links, .nav-ctas { display: none !important; }
+  .nav-burger { display: flex !important; }
+  .nav-logo img { height: 42px !important; }
+  .topbar { display: none !important; }
+  .nav + *:not(.hero):not(.page-hero):not(.legal-hero):not(#hero) { padding-top: 56px !important; }
+
+  /* Container */
+  .container { padding-left: 16px !important; padding-right: 16px !important; box-sizing: border-box !important; max-width: 100% !important; }
+
+  /* Hero sections (pages produit) */
+  .hero-grid, .hero-content-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .hero-content, .hero-text { max-width: 100% !important; overflow-wrap: break-word; word-wrap: break-word; }
+  .hero-sub { max-width: 100% !important; }
+
+  /* General section padding */
+  section { overflow-x: hidden; }
+  section > .container { overflow-x: hidden; }
+
+  /* Grids → single column */
+  .features-grid,
+  .advantages-grid,
+  .steps-grid,
+  .why-grid,
+  .solutions-grid,
+  .solar-sub-layout,
+  .courtier-vs-layout,
+  .process-grid,
+  .benefits-grid,
+  .specs-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Tags wrap */
+  .hero-tags { flex-wrap: wrap; gap: 8px; }
+
+  /* Breadcrumb */
+  .breadcrumb { font-size: 11px; flex-wrap: wrap; gap: 4px; }
+
+  /* Footer inline grid override */
+  .footer-white { padding: 40px 16px 32px !important; }
+  .footer-main-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .footer-form-card { padding: 28px 20px !important; }
+  .footer-form-card h2 { font-size: 22px !important; }
+  .footer-form-row { grid-template-columns: 1fr !important; }
+  .footer-legal { padding: 16px !important; flex-direction: column !important; text-align: center; }
+
+  /* Savings section */
+  .savings-layout { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .savings-details { order: 1; }
+
+  /* Gallery */
+  .solar-gallery {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 160px 160px !important;
+  }
+  .sol-img:first-child { grid-row: auto !important; }
+
+  /* Comparison */
+  .cv-col { padding: 28px 20px !important; }
+
+  /* Cards */
+  .aid-card { flex-direction: column; text-align: center; gap: 12px; }
+  .aid-amount { font-size: 18px; }
+
+  /* Section titles */
+  .section-h2 { font-size: clamp(22px, 6vw, 36px) !important; }
+  .hero-title, .page-title {
+    font-size: clamp(28px, 7vw, 48px) !important;
+  }
+
+  /* Schemas / comparison table */
+  .cmp-schema { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+  .cmp-cell { padding: 14px 12px !important; }
+  .cmp-header-left, .cmp-header-right { padding: 16px 12px 12px !important; }
+  .cmp-row-text { font-size: 12px !important; }
+  .cmp-col-name { font-size: 14px !important; }
+  .cmp-icon-wrap { display: none !important; }
+
+  /* ─── PRODUCT DIAGRAMS — zoom to fit mobile ─── */
+  .sol-diagram,
+  .bat-diagram,
+  .pac-diagram,
+  .pae-diagram,
+  .vmc-diagram,
+  .ev-diagram {
+    zoom: 0.55;
+    -moz-transform: scale(0.55);
+    -moz-transform-origin: center top;
+  }
+  /* Reduce padding & allow overflow on diagram ancestors */
+  div:has(> .sol-diagram),
+  div:has(> .bat-diagram),
+  div:has(> .pac-diagram),
+  div:has(> .pae-diagram),
+  div:has(> .vmc-diagram),
+  div:has(> .ev-diagram) {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    overflow: visible !important;
+  }
+  section:has(.sol-diagram),
+  section:has(.bat-diagram),
+  section:has(.pac-diagram),
+  section:has(.pae-diagram),
+  section:has(.vmc-diagram),
+  section:has(.ev-diagram) {
+    overflow: visible !important;
+  }
+  section:has(.sol-diagram) .container,
+  section:has(.bat-diagram) .container,
+  section:has(.pac-diagram) .container,
+  section:has(.pae-diagram) .container,
+  section:has(.vmc-diagram) .container,
+  section:has(.ev-diagram) .container {
+    overflow: visible !important;
+  }
+  .sol-subtitle, .bat-subtitle, .pac-subtitle, .pae-subtitle, .vmc-subtitle, .ev-subtitle {
+    font-size: 16px !important; margin-bottom: 16px !important;
+  }
+  /* Stats rows wrap on mobile */
+  .sol-stats, .pae-stats-row, .ev-stats-row {
+    flex-wrap: wrap !important; gap: 12px !important; justify-content: center !important;
+  }
+
+  /* ─── TESTIMONIALS — responsive ─── */
+  .testi-mini-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .testi-card {
+    width: calc(85vw - 24px) !important;
+    min-width: calc(85vw - 24px) !important;
+    padding: 24px 20px !important;
+    border-radius: 16px !important;
+  }
+  .testi-title { font-size: clamp(22px, 6vw, 36px) !important; }
+  .testi-mini-title { font-size: clamp(22px, 6vw, 36px) !important; }
+  .testi-text { font-size: 13px !important; }
+  .testi-global { padding: 10px 16px !important; margin-bottom: 32px !important; flex-wrap: wrap !important; justify-content: center !important; gap: 8px !important; }
+  .testi-global-score { font-size: 22px !important; }
+  .testi-global-count { font-size: 11px !important; }
+  .testi-controls { margin-top: 28px !important; }
+  .testi-mini-card { padding: 24px 20px !important; }
+}
+
+@media (max-width: 480px) {
+  .hero-title, .page-title {
+    font-size: 26px !important;
+  }
+  .mobile-menu-shared a { font-size: 16px; }
+  .solar-gallery {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+  }
+
+  /* Diagrams — even smaller zoom on tiny screens */
+  .sol-diagram, .bat-diagram, .pac-diagram, .pae-diagram, .vmc-diagram, .ev-diagram {
+    zoom: 0.45;
+    -moz-transform: scale(0.45);
+  }
+
+  /* Testimonials */
+  .testi-card {
+    width: calc(90vw - 16px) !important;
+    min-width: calc(90vw - 16px) !important;
+    padding: 20px 16px !important;
+  }
+  .testi-text { font-size: 12px !important; line-height: 1.6 !important; }
+}

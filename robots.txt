@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+Disallow: /logo/
+
+# Allow image indexing for SEO
+Allow: /images/
+
+# Crawl-delay for polite bots
+Crawl-delay: 1
+
+# Allow AI bots for GEO (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://www.odscourtage.com/sitemap.xml

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentions Légales — ODS Courtage</title>
+  <meta name="description" content="Mentions légales du site ODS Courtage, courtier en énergie renouvelable pour les particuliers en France." />
+  <link rel="canonical" href="https://www.odscourtage.com/mentions-legales.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.odscourtage.com/mentions-legales.html"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mentions Légales — ODS Courtage" />
+  <meta property="og:description" content="Mentions légales du site ODS Courtage, courtier en énergie renouvelable pour les particuliers en France." />
+  <meta property="og:url" content="https://www.odscourtage.com/mentions-legales.html" />
+  <meta property="og:image" content="https://www.odscourtage.com/apple-touch-icon.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="ODS Courtage" />
+  <!-- GEO Tags (Local SEO + GEO) -->
+  <meta name="geo.region" content="FR-NAQ"/>
+  <meta name="geo.placename" content="Niort"/>
+  <meta name="geo.position" content="46.3234;-0.4646"/>
+  <meta name="ICBM" content="46.3234, -0.4646"/>
+  <meta name="distribution" content="local"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Roman&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:    #140A00;
+      --dark-bg:  #3d2815;
+      --orange:   #FF7B00;
+      --yellow:   #FFC300;
+      --white:    #FBFBF4;
+      --gray:     #8A8070;
+      --grad:     linear-gradient(135deg, #FF7B00 0%, #FFC300 100%);
+      --grad-text: linear-gradient(90deg, #FF7B00, #FFC300);
+      --ease:     cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    h1, h2, h3 { font-family: 'Crimson Roman', serif; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: var(--black);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      cursor: none;
+    }
+
+    /* ── CURSOR ── */
+    #cursor {
+      position: fixed; width: 12px; height: 12px;
+      background: var(--orange); border-radius: 50%;
+      pointer-events: none; z-index: 99999;
+      transform: translate(-50%,-50%);
+      transition: width .3s var(--ease), height .3s var(--ease), background .3s var(--ease);
+    }
+    #cursor-ring {
+      position: fixed; width: 40px; height: 40px;
+      border: 1.5px solid rgba(255,123,0,.6); border-radius: 50%;
+      pointer-events: none; z-index: 99998;
+      transform: translate(-50%,-50%);
+      transition: left .18s var(--ease), top .18s var(--ease), width .35s var(--ease), height .35s var(--ease), border-color .35s var(--ease);
+    }
+    body.cursor-hover #cursor { width: 6px; height: 6px; background: var(--yellow); }
+    body.cursor-hover #cursor-ring { width: 60px; height: 60px; border-color: rgba(255,195,0,.5); }
+    body.cursor-click #cursor { transform: translate(-50%,-50%) scale(.6); }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #ffffff; }
+    ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
+
+    .g-text {
+      background: var(--grad-text);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+    .reveal       { opacity:0; transform:translateY(40px);  transition: opacity .8s var(--ease), transform .8s var(--ease); }
+    .reveal.in    { opacity:1; transform:none; }
+
+    /* ── NAV ── */
+    .nav-logo { display:inline-flex; align-items:center; text-decoration:none; flex-shrink:0; }
+    .nav-logo img { height:60px; width:auto; object-fit:contain; display:block; }
+    .nav-links { display:flex; align-items:center; gap:8px; }
+    .nav-link { font-family:'Inter','Raleway',sans-serif; font-size:14px; font-weight:500; color:#000000 !important; text-decoration:none; padding:8px 14px; border-radius:8px; transition:color .2s ease; }
+    .nav-link:hover { color:#000000 !important; }
+    .nav-ctas { display:flex; align-items:center; gap:10px; }
+    .nav-cta { font-family:'Inter','Raleway',sans-serif; font-size:14px; font-weight:700; padding:9px 22px; background:linear-gradient(90deg,#FF7B00,#FFC300); color:#ffffff !important; border-radius:100px; text-decoration:none; transition:all .3s ease; }
+    .nav-cta:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(255,123,0,.4); }
+    .nav-burger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+    .nav-burger span { display:block; width:22px; height:2px; background:#140A00; border-radius:2px; transition:all .3s ease; }
+    .nav-dropdown { position:relative; }
+    .nav-link-dropdown { background:none; border:none; color:inherit; font:inherit; cursor:pointer; display:flex; align-items:center; gap:4px; padding:0; }
+    .nav-dropdown-menu { position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(-8px); background:#ffffff; border:1px solid rgba(20,10,0,0.1); border-radius:16px; padding:8px; min-width:220px; opacity:0; pointer-events:none; transition:all .25s ease; z-index:200; box-shadow:0 8px 24px rgba(0,0,0,0.1); }
+    .nav-dropdown-menu::before { content:''; position:absolute; top:-14px; left:0; right:0; height:14px; }
+    .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu { opacity:1; pointer-events:all; transform:translateX(-50%) translateY(0); }
+    .nav-dropdown-item { display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:10px; color:#000000 !important; text-decoration:none; font-size:14px; transition:all .2s ease; white-space:nowrap; }
+    .nav-dropdown-item:hover { background:rgba(255,123,0,.1); color:#000000 !important; }
+    .nav-contact-btn { font-family:'Inter','Raleway',sans-serif; font-size:14px; font-weight:600; color:#000000 !important; text-decoration:none; padding:8px 18px; border:1px solid #000000; border-radius:100px; transition:all .3s ease; }
+    .nav-contact-btn:hover { border-color:#000000; color:#000000 !important; }
+    .nav { position:fixed; top:40px; left:0; right:0; z-index:9999; background:#ffffff; padding:12px 0; box-shadow:0 2px 15px rgba(0,0,0,0.08); }
+    .nav.scrolled { top: 0; }
+    .nav + *:not(.hero):not(.page-hero):not(.legal-hero):not(#hero) { padding-top:64px; }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; }
+
+    /* ── HERO BANNER ── */
+    .legal-hero {
+      background: radial-gradient(ellipse at 30% 110%, #4a3220 0%, #3d2815 55%, #352210 100%);
+      padding: 120px 0 60px;
+      text-align: center;
+    }
+    .legal-hero h1 {
+      font-family: 'Crimson Roman', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .legal-hero p {
+      margin-top: 12px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── LEGAL CONTENT ── */
+    .legal-content {
+      background: #ffffff;
+      padding: 60px 0 80px;
+    }
+    .legal-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .legal-section {
+      margin-bottom: 48px;
+    }
+    .legal-section:last-child {
+      margin-bottom: 0;
+    }
+    .legal-section h2 {
+      font-family: 'Crimson Roman', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(255,123,0,0.2);
+    }
+    .legal-section h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+    .legal-section p,
+    .legal-section ul {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 12px;
+    }
+    .legal-section ul {
+      padding-left: 24px;
+    }
+    .legal-section li {
+      margin-bottom: 6px;
+    }
+    .legal-section a {
+      color: var(--orange);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .legal-section a:hover {
+      color: #e06a00;
+      text-decoration: underline;
+    }
+    .legal-placeholder {
+      display: inline-block;
+      background: rgba(255,123,0,0.08);
+      border: 1px dashed rgba(255,123,0,0.4);
+      border-radius: 4px;
+      padding: 1px 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--orange);
+    }
+    .legal-update {
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+
+.nav-logo img { height: 42px !important; }
+      .legal-hero { padding: 100px 20px 40px; }
+      .legal-inner { padding: 0 20px; }
+      .legal-section h2 { font-size: 22px; }
+      .nav-links, .nav-ctas { display:none; }
+      .nav-burger { display:flex; }
+    }
+  </style>
+<link rel="stylesheet" href="mobile.css?v=2">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mentions Légales — ODS Courtage" />
+  <meta name="twitter:description" content="Mentions légales du site ODS Courtage, courtier en énergie renouvelable pour les particuliers en France." />
+  <meta name="twitter:image" content="https://www.odscourtage.com/apple-touch-icon.png" />
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
+<!-- MOBILE MENU -->
+<div class="mobile-menu-shared" id="mobileMenu">
+  <button class="mobile-menu-close-shared" onclick="toggleMenu()">&#x2715;</button>
+  <a href="nos-solutions.html" onclick="toggleMenu()">Nos Solutions</a>
+  <a href="abonnement-solaire.html" onclick="toggleMenu()">Abonnement solaire</a>
+  <a href="index.html#why" onclick="toggleMenu()">Pourquoi ODS</a>
+  <a href="nos-valeurs.html" onclick="toggleMenu()">Nos valeurs</a>
+  <a href="nos-realisations.html" onclick="toggleMenu()">Nos réalisations</a>
+  <a href="comment-ca-marche.html" onclick="toggleMenu()">Comment ça marche</a>
+  <a href="nous-contacter.html" onclick="toggleMenu()">Nous contacter</a>
+  <div class="mm-separator"></div>
+  <a href="nous-contacter.html" class="mm-cta" onclick="toggleMenu()">Bilan gratuit</a>
+</div>
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-ods.png" alt="ODS Courtage — courtier énergie renouvelable" loading="eager">
+    </a>
+    <div class="nav-links" id="navLinks">
+      <div class="nav-dropdown">
+        <button class="nav-link nav-link-dropdown" aria-expanded="false">Nos Solutions <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="solaire.html" class="nav-dropdown-item">Panneaux Solaires</a>
+          <a href="pac-air-air.html" class="nav-dropdown-item">PAC Air/Air</a>
+          <a href="pac-air-eau.html" class="nav-dropdown-item">PAC Air/Eau</a>
+          <a href="borne-recharge.html" class="nav-dropdown-item">Borne de recharge</a>
+          <a href="batterie-stockage.html" class="nav-dropdown-item">Batterie de stockage</a>
+          <a href="vmc-double-flux.html" class="nav-dropdown-item">VMC Double Flux</a>
+        </div>
+      </div>
+      <a href="nos-realisations.html" class="nav-link">Nos réalisations</a>
+      <a href="nos-valeurs.html" class="nav-link">Nos valeurs</a>
+      <a href="comment-ca-marche.html" class="nav-link">Comment ça marche</a>
+      <a href="sav.html" class="nav-link">SAV</a>
+    </div>
+    <div class="nav-ctas">
+      <a href="sav.html" class="nav-contact-btn">Contact</a>
+      <a href="nous-contacter.html" class="nav-cta">Bilan gratuit</a>
+    </div>
+    <a href="tel:0805037036" class="nav-phone-mobile" aria-label="Appeler ODS"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.2 1.6C3.1 1.5 2.9 1.4 2.7 1.5L1.2 2.2C0.9 2.3 0.7 2.6 0.7 2.9C0.8 6.1 2.1 9.1 4.3 11.4C6.5 13.6 9.5 14.9 12.7 15C13 15 13.3 14.8 13.4 14.5L14.1 13C14.2 12.8 14.1 12.6 14 12.5L11.5 10.5C11.4 10.4 11.2 10.4 11 10.5L9.7 11.2C9.5 11.3 9.3 11.3 9.1 11.2C8.1 10.6 7.2 9.8 6.5 8.8C5.8 7.9 5.3 6.8 5.1 5.7C5.1 5.5 5.1 5.3 5.2 5.1L5.9 3.8C6 3.6 6 3.4 5.9 3.3L3.2 1.6Z" fill="#FF7B00"/></svg><span>0 805 037 036</span></a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO BANNER -->
+<section class="legal-hero">
+  <div class="container">
+    <h1>Mentions Légales</h1>
+    <p>Informations légales relatives au site odscourtage.com</p>
+  </div>
+</section>
+
+<!-- LEGAL CONTENT -->
+<section class="legal-content">
+  <div class="legal-inner">
+
+    <!-- 1. Éditeur du site -->
+    <div class="legal-section reveal">
+      <h2>1. Éditeur du site</h2>
+      <p>Le site <a href="https://odscourtage.com">odscourtage.com</a> est édité par :</p>
+      <ul>
+        <li><strong>Raison sociale :</strong> ODS</li>
+        <li><strong>Forme juridique :</strong> SARL</li>
+        <li><strong>Capital social :</strong> 44 000 €</li>
+        <li><strong>Siège social :</strong> 7 rue Frida Kahlo, 17000 La Rochelle</li>
+        <li><strong>SIRET :</strong> 935 310 649 00014</li>
+        <li><strong>RCS :</strong> La Rochelle 935 310 649</li>
+        <li><strong>Numéro de TVA intracommunautaire :</strong> FR58 935 310 649</li>
+        <li><strong>Activité :</strong> Courtage en énergies renouvelables (panneaux solaires, pompes à chaleur, bornes de recharge, VMC, batteries)</li>
+        <li><strong>Téléphone :</strong> 0 805 037 036 (appel gratuit)</li>
+        <li><strong>Email :</strong> <a href="mailto:contact@odscourtage.com">contact@odscourtage.com</a></li>
+      </ul>
+    </div>
+
+    <!-- 2. Directeur de la publication -->
+    <div class="legal-section reveal">
+      <h2>2. Directeur de la publication</h2>
+      <p>Le directeur de la publication du site odscourtage.com est :</p>
+      <p><strong>Nom :</strong> Arthur Jupin</p>
+      <p><strong>Qualité :</strong> Gérant</p>
+      <p>Contact : <a href="mailto:contact@odscourtage.com">contact@odscourtage.com</a></p>
+    </div>
+
+    <!-- 3. Hébergeur -->
+    <div class="legal-section reveal">
+      <h2>3. Hébergeur</h2>
+      <p>Le site odscourtage.com est hébergé par :</p>
+      <ul>
+        <li><strong>Raison sociale :</strong> HostPapa Inc.</li>
+        <li><strong>Adresse :</strong> 5063 North Service Road, Suite 102, Burlington, Ontario L7L 5H6, Canada</li>
+        <li><strong>Téléphone :</strong> 1-888-959-7272</li>
+        <li><strong>Site web :</strong> <a href="https://www.hostpapa.com" target="_blank" rel="noopener noreferrer">www.hostpapa.com</a></li>
+      </ul>
+    </div>
+
+    <!-- 4. Propriété intellectuelle -->
+    <div class="legal-section reveal">
+      <h2>4. Propriété intellectuelle</h2>
+      <p>L'ensemble du contenu du site odscourtage.com (textes, images, graphismes, logo, icônes, vidéos, sons, logiciels, mise en page, base de données) est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.</p>
+      <p>Toute reproduction, représentation, modification, publication, adaptation, totale ou partielle, de l'un quelconque de ces éléments, quel que soit le moyen ou le procédé utilisé, est interdite sans l'autorisation écrite préalable d'ODS Courtage.</p>
+      <p>Toute exploitation non autorisée du site ou de l'un quelconque des éléments qu'il contient sera considérée comme constitutive d'une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de la Propriété Intellectuelle.</p>
+      <p>La marque ODS Courtage, ainsi que l'ensemble des marques figuratives ou non, et plus généralement toutes les marques, illustrations, images et logotypes figurant sur le site sont et demeurent la propriété exclusive d'ODS Courtage. Toute reproduction totale ou partielle de ces marques sans autorisation expresse est prohibée au sens de l'article L.713-2 du Code de la Propriété Intellectuelle.</p>
+    </div>
+
+    <!-- 5. Limitation de responsabilité -->
+    <div class="legal-section reveal">
+      <h2>5. Limitation de responsabilité</h2>
+      <p>ODS Courtage s'efforce d'assurer au mieux l'exactitude et la mise à jour des informations diffusées sur le site odscourtage.com. Toutefois, ODS Courtage ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à disposition sur ce site.</p>
+      <p>En conséquence, ODS Courtage décline toute responsabilité :</p>
+      <ul>
+        <li>Pour toute imprécision, inexactitude ou omission portant sur des informations disponibles sur le site ;</li>
+        <li>Pour tous dommages résultant d'une intrusion frauduleuse d'un tiers ayant entraîné une modification des informations ou éléments mis à disposition sur le site ;</li>
+        <li>Et plus généralement, pour tous dommages, directs ou indirects, qu'elles qu'en soient les causes, origines, natures ou conséquences, provoqués en raison de l'accès de quiconque au site ou de l'impossibilité d'y accéder, de même que l'utilisation du site et/ou du crédit accordé à une quelconque information provenant directement ou indirectement de ce dernier.</li>
+      </ul>
+      <p>Le site odscourtage.com peut contenir des liens vers d'autres sites internet ou d'autres sources d'informations gérés par des tiers. Dans la mesure où ODS Courtage ne peut contrôler ces sites et sources externes, ODS Courtage ne peut être tenu pour responsable de leur contenu, publicités, produits, services ou tout autre matériel disponible sur ou à partir de ces sites ou sources externes.</p>
+    </div>
+
+    <!-- 6. Liens hypertextes -->
+    <div class="legal-section reveal">
+      <h2>6. Liens hypertextes</h2>
+      <p>Le site odscourtage.com peut contenir des liens hypertextes vers d'autres sites internet. Ces liens sont fournis uniquement à titre informatif et ne sauraient engager la responsabilité d'ODS Courtage quant au contenu de ces sites.</p>
+      <p>La mise en place de liens hypertextes vers le site odscourtage.com est autorisée sans accord préalable, à condition que :</p>
+      <ul>
+        <li>Les pages du site odscourtage.com ne soient pas imbriquées à l'intérieur des pages d'un autre site (technique du framing) ;</li>
+        <li>La source soit clairement mentionnée par un lien direct vers l'URL du site odscourtage.com.</li>
+      </ul>
+      <p>ODS Courtage se réserve le droit de demander la suppression d'un lien qu'elle estime non conforme à l'objet du site odscourtage.com ou à sa politique éditoriale.</p>
+    </div>
+
+    <!-- 7. Données personnelles -->
+    <div class="legal-section reveal">
+      <h2>7. Données personnelles</h2>
+      <p>Les informations recueillies sur le site odscourtage.com font l'objet d'un traitement informatique destiné à ODS Courtage pour la gestion de la relation client et le traitement des demandes de devis et d'information.</p>
+      <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de suppression, de limitation, de portabilité et d'opposition sur vos données personnelles.</p>
+      <p>Pour exercer ces droits ou pour toute question relative à la protection de vos données, vous pouvez nous contacter :</p>
+      <ul>
+        <li><strong>Par email :</strong> <a href="mailto:contact@odscourtage.com">contact@odscourtage.com</a></li>
+        <li><strong>Par téléphone :</strong> 0 805 037 036 (appel gratuit)</li>
+        <li><strong>Par courrier :</strong> ODS Courtage — 7 rue Frida Kahlo, 17000 La Rochelle</li>
+      </ul>
+      <p>Pour plus d'informations, consultez notre <a href="politique-confidentialite.html">Politique de confidentialité</a>.</p>
+    </div>
+
+    <!-- 8. Droit applicable -->
+    <div class="legal-section reveal">
+      <h2>8. Droit applicable</h2>
+      <p>Les présentes mentions légales sont régies par la loi française. En cas de litige, et après tentative de recherche d'une solution amiable, compétence expresse est attribuée aux tribunaux compétents du ressort du siège social d'ODS Courtage.</p>
+      <p>Tout litige relatif à l'utilisation du site odscourtage.com est soumis au droit français.</p>
+    </div>
+
+    <!-- 9. Crédits -->
+    <div class="legal-section reveal">
+      <h2>9. Crédits</h2>
+      <p><strong>Conception et développement du site :</strong> JUPIN Arthur et son ami Claude</p>
+      <p><strong>Crédits photographiques :</strong> ODS Courtage / Unsplash</p>
+      <p><strong>Polices de caractères :</strong> Crimson Roman, Inter — servies par Google Fonts.</p>
+    </div>
+
+    <p class="legal-update">Dernière mise à jour : 12 mars 2026</p>
+
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer style="font-family:'Montserrat','Inter',sans-serif;">
+  <div style="background:#fff; padding:80px 60px 60px;" class="footer-white">
+    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1.5fr; gap:80px; align-items:start;" class="footer-main-grid">
+      <div>
+        <img src="images/logo-ods.png" alt="ODS Courtage" style="height:60px;width:auto;object-fit:contain;display:block;">
+        <p style="margin-top:20px; color:#555; font-size:14px; line-height:1.85; max-width:360px;">Le premier courtier B2C en énergie renouvelable pour les particuliers en France. Nous travaillons pour vous, pas pour les sociétés.</p>
+        <div style="margin-top:32px; display:flex; flex-direction:column; gap:14px;">
+          <div style="display:flex; align-items:center; gap:12px; color:#555; font-size:14px;">0 805 037 036</div>
+          <div style="display:flex; align-items:center; gap:12px; color:#555; font-size:14px;">contact@odscourtage.com</div>
+        </div>
+      </div>
+      <div style="background:radial-gradient(ellipse at 30% 110%, #4a3220 0%, #3d2815 55%, #352210 100%); border-radius:20px; padding:48px; color:#fff;" class="footer-form-card">
+        <h2 style="font-size:30px; font-weight:800; color:#fff; line-height:1.2;">Demandez votre bilan gratuit</h2>
+        <p style="margin-top:8px; color:#a08060; font-size:14px;">Réponse sous 24h par un conseiller dédié</p>
+        <form id="footerForm" action="https://formsubmit.co/ajax/contact@odscourtage.com" method="POST" style="margin-top:28px; display:flex; flex-direction:column; gap:16px;">
+          <input type="hidden" name="_subject" value="Nouvelle demande — ODS Courtage"/>
+          <input type="hidden" name="_template" value="table"/>
+          <input type="hidden" name="_captcha" value="false"/>
+          <input type="text" name="_honey" style="display:none"/>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;" class="footer-form-row">
+            <div>
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Prénom</label>
+              <input type="text" name="prenom" placeholder="Jean" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-size:14px; outline:none; box-sizing:border-box;">
+            </div>
+            <div>
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Nom</label>
+              <input type="text" name="nom" placeholder="Dupont" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-size:14px; outline:none; box-sizing:border-box;">
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;" class="footer-form-row">
+            <div>
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Email</label>
+              <input type="email" name="email" placeholder="jean@exemple.fr" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-size:14px; outline:none; box-sizing:border-box;">
+            </div>
+            <div>
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Téléphone</label>
+              <input type="tel" name="telephone" placeholder="06 00 00 00 00" style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-size:14px; outline:none; box-sizing:border-box;">
+            </div>
+          </div>
+          <button type="submit" id="footerFormBtn" style="width:100%; padding:16px; background:linear-gradient(135deg,#f5b030,#e07020); border:none; border-radius:50px; color:#1a0a00; font-size:15px; font-weight:700; cursor:pointer;">Envoyer ma demande</button>
+          <div id="footerFormSuccess" style="display:none;text-align:center;padding:20px;">
+            <div style="font-size:40px;margin-bottom:12px;">&#10003;</div>
+            <p style="font-size:16px;font-weight:600;color:#FFC300;">Demande envoyee avec succes !</p>
+            <p style="font-size:13px;color:rgba(251,251,244,.5);margin-top:6px;">Nous vous recontacterons sous 24h.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div style="background:#fff; border-top:1px solid #eee; padding:20px 60px; display:flex; justify-content:space-between; align-items:center; font-size:13px; color:#999; flex-wrap:wrap; gap:12px;" class="footer-legal">
+    <span>&copy; 2025 ODS Courtage. Tous droits réservés.</span>
+    <div style="display:flex; gap:32px;">
+      <a href="mentions-legales.html" style="color:#999; text-decoration:none;">Mentions légales</a>
+      <a href="politique-confidentialite.html" style="color:#999; text-decoration:none;">Politique de confidentialité</a>
+      <a href="cgu.html" style="color:#999; text-decoration:none;">CGU</a>
+    </div>
+  </div>
+</footer>
+<!-- ==================== FIN FOOTER ==================== -->
+
+<script>
+  let cursor = document.getElementById('cursor');
+  let ring   = document.getElementById('cursor-ring');
+  if('ontouchstart' in window||navigator.maxTouchPoints>0){if(cursor)cursor.remove();if(ring)ring.remove();cursor=null;ring=null;}
+  document.addEventListener('mousemove', e => {
+    if (!cursor || !ring) return;
+    cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
+    ring.style.left   = e.clientX + 'px'; ring.style.top   = e.clientY + 'px';
+  });
+  document.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
+  document.addEventListener('mouseup',   () => document.body.classList.remove('cursor-click'));
+  document.querySelectorAll('a,button,input,select,textarea').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  });
+
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+  window.addEventListener('scroll', () => document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50), { passive:true });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:.12, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // MOBILE MENU
+  function toggleMenu(){
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+  }
+  document.getElementById('navBurger').addEventListener('click', toggleMenu);
+
+// ─── FOOTER CONTACT FORM (Formsubmit AJAX) ───
+(function() {
+  var form = document.getElementById('footerForm');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('footerFormBtn');
+    var success = document.getElementById('footerFormSuccess');
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours...';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(r) {
+      if (r.ok) {
+        form.querySelectorAll('input,select,textarea').forEach(function(el) { el.style.display = 'none'; });
+        form.querySelectorAll('.footer-form-row,label,div').forEach(function(el) { el.style.display = 'none'; });
+        btn.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Erreur, réessayez';
+      }
+    }).catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Erreur, réessayez';
+    });
+  });
+})();
+</script>
+</body>
+</html>
