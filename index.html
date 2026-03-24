@@ -530,9 +530,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.35s ease;
+      transition: transform 0.35s ease, opacity 0.5s ease;
+      transform: translateY(-100%);
+      opacity: 0;
     }
-    .topbar.hidden { transform: translateY(-100%); }
+    .topbar.topbar-visible { transform: translateY(0); opacity: 1; }
+    .topbar.hidden { transform: translateY(-100%); opacity: 0; }
     .topbar-inner {
       display: flex; align-items: center; gap: 20px;
       width: 100%; max-width: 1280px; padding: 0 32px;
@@ -561,14 +564,20 @@
     /* ─── NAVBAR ─── */
     nav {
       position: fixed;
-      top: 40px;
+      top: 0;
       left: 0;
       right: 0;
       z-index: 9999;
       background: #ffffff;
       padding: 12px 0;
       box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-      transition: top 0.35s ease, background 0.3s, padding 0.3s, box-shadow 0.3s;
+      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.5s ease, padding 0.3s, box-shadow 0.3s;
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    nav.nav-visible {
+      transform: translateY(0);
+      opacity: 1;
     }
 
     nav.scrolled {
@@ -645,17 +654,104 @@
       transition: var(--transition);
     }
 
-    /* ─── HERO ─── */
-    #hero {
-      min-height: 100vh;
-      background: var(--dark-bg);
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      padding: 160px 0 80px;
+    /* ─── HERO (Concept B) ─── */
+    .hero-new{
+      position:fixed;top:0;left:0;right:0;height:100svh;z-index:1;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      background:var(--white);overflow:hidden;
     }
+    .hero-wash-new{
+      position:absolute;inset:0;pointer-events:none;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 30%, rgba(255,195,0,0.06), transparent 70%),
+        radial-gradient(ellipse 50% 40% at 30% 70%, rgba(255,123,0,0.04), transparent 60%);
+      animation:washMoveNew 20s ease-in-out infinite alternate;
+    }
+    @keyframes washMoveNew{0%{transform:translate(0,0) scale(1);}100%{transform:translate(30px,-20px) scale(1.1);}}
+    .hero-particles-new{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;}
+    .hp-new{position:absolute;border-radius:50%;opacity:0;animation:hpFloatNew linear infinite;}
+    .hp-new--circle{border:1.5px solid rgba(255,123,0,0.08);}
+    .hp-new--dot{background:rgba(255,195,0,0.1);}
+    .hp-new--ring{border:1px solid rgba(255,195,0,0.06);}
+    .hp-new--cross{border:none;border-radius:0;width:12px!important;height:12px!important;}
+    .hp-new--cross::before,.hp-new--cross::after{content:'';position:absolute;background:rgba(255,123,0,0.07);border-radius:1px;}
+    .hp-new--cross::before{width:100%;height:1.5px;top:50%;transform:translateY(-50%);}
+    .hp-new--cross::after{width:1.5px;height:100%;left:50%;transform:translateX(-50%);}
+    .hp-new--diamond{border-radius:2px!important;border:1.5px solid rgba(255,123,0,0.06);transform:rotate(45deg);}
+    @keyframes hpFloatNew{0%{opacity:0;transform:translateY(0) rotate(0deg);}10%{opacity:1;}90%{opacity:1;}100%{opacity:0;transform:translateY(-100vh) rotate(180deg);}}
+    .draw-line-new{position:absolute;top:50%;left:0;right:0;height:1px;z-index:0;background:linear-gradient(90deg,transparent,rgba(255,123,0,0.06),transparent);transform:scaleX(0);transform-origin:center;animation:drawLineNew 2s cubic-bezier(0.16,1,0.3,1) 0.6s forwards;}
+    @keyframes drawLineNew{to{transform:scaleX(1);}}
+    .ods-watermark-new{position:absolute;top:50%;right:-5vw;transform:translateY(-55%);font-family:'Crimson Roman',serif;font-size:clamp(200px,35vw,500px);font-weight:900;letter-spacing:-0.05em;color:transparent;-webkit-text-stroke:1.5px rgba(255,123,0,0.06);line-height:0.85;pointer-events:none;user-select:none;opacity:0;animation:watermarkInNew 1.5s ease 0.5s forwards;}
+    @keyframes watermarkInNew{to{opacity:1;}}
+    .logo-wrap-new{position:relative;margin-bottom:48px;opacity:0;transform:scale(0.8) translateY(20px);animation:logoEnterNew 1.2s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;}
+    @keyframes logoEnterNew{0%{opacity:0;transform:scale(0.8) translateY(20px);}60%{opacity:1;transform:scale(1.03) translateY(-3px);}100%{opacity:1;transform:scale(1) translateY(0);}}
+    .logo-img-new{width:clamp(120px,15vw,180px);height:auto;display:block;}
+    .hero-text-new{position:relative;z-index:2;text-align:center;padding:0 24px;}
+    .hero-eyebrow-new{display:inline-flex;align-items:center;gap:12px;margin-bottom:28px;opacity:0;animation:fadeUpNew 0.7s ease 1s forwards;}
+    .ey-line-new{width:32px;height:1.5px;border-radius:2px;background:linear-gradient(90deg,var(--orange),var(--yellow));}
+    .ey-text-new{font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);}
+    .hero-headline-new{font-family:'Crimson Roman',serif;font-size:clamp(40px,9vw,120px);font-weight:900;line-height:1;letter-spacing:-0.05em;margin-bottom:28px;}
+    .hl-new{display:block;overflow:hidden;padding-bottom:0.08em;}
+    .hl-in-new{display:block;opacity:0;transform:translateY(110%);}
+    .hl-new:nth-child(1) .hl-in-new{animation:slideUpNew 1s cubic-bezier(0.16,1,0.3,1) 1.2s forwards;}
+    .hl-new:nth-child(2) .hl-in-new{animation:slideUpNew 1s cubic-bezier(0.16,1,0.3,1) 1.35s forwards;}
+    @keyframes slideUpNew{to{opacity:1;transform:translateY(0);}}
+    .hl-grad-new{background:linear-gradient(90deg,var(--orange),var(--yellow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .hero-sub-new{font-size:clamp(15px,1.4vw,18px);line-height:1.75;color:rgba(20,10,0,0.45);max-width:520px;margin:0 auto 40px;opacity:0;animation:fadeUpNew 0.7s ease 1.7s forwards;}
+    .hero-ctas-new{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUpNew 0.7s ease 1.9s forwards;}
+    .hero-btn{display:inline-flex;align-items:center;gap:10px;padding:18px 40px;border-radius:100px;font-weight:700;font-size:15px;text-decoration:none;border:none;cursor:pointer;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden;}
+    .hero-btn-primary{background:linear-gradient(135deg,var(--orange),var(--yellow));color:var(--dark-bg);box-shadow:0 4px 24px rgba(255,123,0,0.25);}
+    .hero-btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(255,123,0,0.35);}
+    .hero-btn-outline{background:transparent;color:var(--dark-bg);border:1.5px solid rgba(20,10,0,0.1);}
+    .hero-btn-outline:hover{border-color:rgba(20,10,0,0.25);background:rgba(20,10,0,0.02);}
+    .scroll-hint-new{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUpNew 0.5s ease 2.6s forwards;}
+    .sh-line-new{width:1px;height:44px;background:rgba(20,10,0,0.08);position:relative;overflow:hidden;}
+    .sh-line-new::after{content:'';position:absolute;top:-100%;left:0;width:1px;height:100%;background:var(--orange);animation:scrollPulseNew 2.2s ease-in-out infinite;}
+    @keyframes scrollPulseNew{0%{top:-100%;}50%{top:100%;}100%{top:100%;}}
+    .sh-text-new{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(20,10,0,0.2);}
+    @keyframes fadeUpNew{0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);}}
+    .hero-spacer-new{height:100svh;}
+    /* Économies section */
+    .eco-section{position:relative;z-index:10;background:var(--white);min-height:60vh;padding:100px 6vw;box-shadow:0 -40px 80px rgba(20,10,0,0.06);border-radius:40px 40px 0 0;}
+    .eco-split{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;text-align:left;}
+    .eco-badge{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);background:rgba(255,123,0,0.1);border:1px solid rgba(255,123,0,0.2);border-radius:50px;padding:8px 20px;margin-bottom:28px;}
+    .eco-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--orange);}
+    .eco-title{font-family:'Crimson Roman',serif;font-size:clamp(32px,4.5vw,56px);font-weight:900;line-height:1.05;letter-spacing:-0.03em;color:var(--dark-bg);margin-bottom:24px;}
+    .eco-title em{font-style:normal;background:linear-gradient(90deg,var(--orange),var(--yellow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .eco-sub{font-size:16px;line-height:1.7;color:rgba(20,10,0,0.5);max-width:480px;margin-bottom:36px;}
+    .eco-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+    .eco-btn-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:100px;font-size:15px;font-weight:700;background:linear-gradient(135deg,var(--orange),var(--yellow));color:var(--dark-bg);text-decoration:none;box-shadow:0 4px 20px rgba(255,123,0,0.3);transition:all 0.3s;}
+    .eco-btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,123,0,0.4);}
+    .eco-btn-outline{display:inline-flex;align-items:center;justify-content:center;padding:16px 32px;border-radius:100px;font-size:15px;font-weight:600;background:transparent;border:1.5px solid rgba(20,10,0,0.15);color:var(--dark-bg);text-decoration:none;transition:all 0.3s;}
+    .eco-btn-outline:hover{background:rgba(20,10,0,0.03);border-color:rgba(20,10,0,0.3);}
+    .eco-card{background:rgba(20,10,0,0.02);backdrop-filter:blur(12px);border:1px solid rgba(20,10,0,0.06);border-radius:20px;padding:32px;box-shadow:0 8px 40px rgba(20,10,0,0.04);}
+    .ec-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+    .ec-title{font-size:11px;font-weight:700;letter-spacing:0.1em;color:rgba(20,10,0,0.45);text-transform:uppercase;}
+    .ec-badge{font-size:10px;font-weight:600;letter-spacing:0.05em;color:var(--orange);border:1.5px solid var(--orange);border-radius:50px;padding:4px 12px;position:relative;}
+    .ec-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--orange);display:inline-block;margin-right:6px;animation:livePulseNew 2s ease-in-out infinite;}
+    @keyframes livePulseNew{0%,100%{opacity:1;}50%{opacity:0.3;}}
+    .ec-amount{font-family:'Crimson Roman',serif;font-size:clamp(42px,5vw,56px);font-weight:800;background:linear-gradient(90deg,var(--orange),var(--yellow));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;}
+    .ec-amount-label{font-size:13px;color:rgba(20,10,0,0.4);margin-top:4px;margin-bottom:24px;}
+    .ec-bar-row{margin-bottom:14px;}.ec-bar-row:last-child{margin-bottom:0;}
+    .ec-bar-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+    .ec-bar-name{font-size:13px;font-weight:500;color:var(--dark-bg);}
+    .ec-bar-pct{font-size:13px;font-weight:700;color:var(--orange);}
+    .ec-bar-track{height:6px;border-radius:3px;background:rgba(20,10,0,0.06);overflow:hidden;}
+    .ec-bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--orange),var(--yellow));width:0;transition:width 1.5s cubic-bezier(0.25,1,0.5,1);}
+    .rv-new{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+    .rv-new.v{opacity:1;transform:translateY(0);}
+    .rv-new.d1{transition-delay:0.05s;}.rv-new.d2{transition-delay:0.1s;}.rv-new.d3{transition-delay:0.15s;}
 
+    /* Old hero - hidden */
+    #hero { display:none !important; }
+    /* All content after hero must cover the fixed hero */
+    section:not(.hero-new), footer, .about-section {
+      position: relative;
+      z-index: 10;
+    }
+    section:not(.hero-new):not(.eco-section):not([style*="dark-bg"]) {
+      background-color: var(--white);
+    }
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -2251,6 +2347,12 @@
 
     /* ─── MOBILE RESPONSIVE COMPLET ─── */
     @media (max-width: 768px) {
+      /* New hero mobile */
+      .hero-headline-new{font-size:clamp(36px,12vw,64px);}
+      .hero-ctas-new{flex-direction:column;align-items:center;}
+      .hero-btn{width:100%;max-width:320px;justify-content:center;}
+      .eco-split{grid-template-columns:1fr;gap:40px;}
+      .eco-section{border-radius:20px 20px 0 0;padding:60px 5vw;}
       /* Nav mobile — topbar hidden so nav goes to top */
       nav { top: 0 !important; padding: 8px 0; }
       .nav-logo img { height: 42px !important; }
@@ -2377,6 +2479,81 @@
   <link rel="stylesheet" href="mobile.css?v=7">
 </head>
 <body>
+
+<!-- ═══════════ NEW HERO (Concept B) ═══════════ -->
+<section class="hero-new" id="heroNew">
+  <div class="hero-wash-new"></div>
+  <div class="hero-particles-new" id="heroParticlesNew"></div>
+  <div class="draw-line-new"></div>
+  <div class="ods-watermark-new">ODS</div>
+  <div class="logo-wrap-new">
+    <img src="images/logo-ods.png" alt="ODS Courtage" class="logo-img-new"/>
+  </div>
+  <div class="hero-text-new">
+    <div class="hero-eyebrow-new">
+      <div class="ey-line-new"></div>
+      <span class="ey-text-new">Premier courtier en énergie renouvelable</span>
+      <div class="ey-line-new"></div>
+    </div>
+    <h1 class="hero-headline-new">
+      <span class="hl-new"><span class="hl-in-new">Votre <span class="hl-grad-new">courtier</span></span></span>
+      <span class="hl-new"><span class="hl-in-new">en énergies renouvelables.</span></span>
+    </h1>
+    <p class="hero-sub-new">ODS compare les offres, négocie les prix et supervise vos travaux de A à Z. Panneaux solaires, pompes à chaleur, bornes de recharge.</p>
+    <div class="hero-ctas-new">
+      <a href="nous-contacter.html" class="hero-btn hero-btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Bilan énergétique gratuit
+      </a>
+      <a href="comment-ca-marche.html" class="hero-btn hero-btn-outline">Découvrir ODS</a>
+    </div>
+  </div>
+  <div class="scroll-hint-new">
+    <div class="sh-line-new"></div>
+    <span class="sh-text-new">Défiler</span>
+  </div>
+</section>
+<div class="hero-spacer-new"></div>
+
+<!-- ═══════════ SECTION ÉCONOMIES ═══════════ -->
+<section class="eco-section" id="ecoSection">
+  <div class="eco-split">
+    <div class="eco-left">
+      <div class="eco-badge rv-new">N°1 du courtage énergie renouvelable</div>
+      <h2 class="eco-title rv-new d1">L'énergie renouvelable,<br><em>enfin accessible<br>à tous.</em></h2>
+      <p class="eco-sub rv-new d2">Votre éco-courtier négocie les meilleures offres en panneaux solaires, climatisation, pompes à chaleur et bornes de recharge.</p>
+      <div class="eco-ctas rv-new d3">
+        <a href="nous-contacter.html" class="eco-btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Bilan gratuit
+        </a>
+        <a href="comment-ca-marche.html" class="eco-btn-outline">Découvrir</a>
+      </div>
+    </div>
+    <div class="eco-right rv-new d2">
+      <div class="eco-card">
+        <div class="ec-header">
+          <span class="ec-title">Économies annuelles</span>
+          <span class="ec-badge">En direct</span>
+        </div>
+        <div class="ec-amount">1 840€</div>
+        <div class="ec-amount-label">économisés par an en moyenne</div>
+        <div class="ec-bar-row">
+          <div class="ec-bar-info"><span class="ec-bar-name">Panneaux solaires</span><span class="ec-bar-pct">78%</span></div>
+          <div class="ec-bar-track"><div class="ec-bar-fill" data-width="78"></div></div>
+        </div>
+        <div class="ec-bar-row">
+          <div class="ec-bar-info"><span class="ec-bar-name">PAC Air/Air</span><span class="ec-bar-pct">62%</span></div>
+          <div class="ec-bar-track"><div class="ec-bar-fill" data-width="62"></div></div>
+        </div>
+        <div class="ec-bar-row">
+          <div class="ec-bar-info"><span class="ec-bar-name">PAC Air/Eau</span><span class="ec-bar-pct">70%</span></div>
+          <div class="ec-bar-track"><div class="ec-bar-fill" data-width="70"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ═══════════ TOPBAR ═══════════ -->
 <div class="topbar" id="topbar">
@@ -2553,7 +2730,7 @@
 </section>
 
 
-<!-- ═══════════ HERO ═══════════ -->
+<!-- ═══════════ OLD HERO (hidden) ═══════════ -->
 <section id="hero">
   <div class="hero-bg">
     <div class="hero-orb hero-orb-1"></div>
@@ -3927,15 +4104,124 @@
 <!-- ==================== FIN FOOTER ==================== -->
 
 <script>
-  // ─── NAVBAR SCROLL ───
+  // ─── NAVBAR SCROLL + HERO ANIMATIONS ───
   const navbar = document.getElementById('nav');
   const topbar = document.getElementById('topbar');
+  const logoWrapNew = document.querySelector('.logo-wrap-new');
+  const eyebrowNew = document.querySelector('.hero-eyebrow-new');
+  const headlineNew = document.querySelector('.hero-headline-new');
+  const heroSubNew = document.querySelector('.hero-sub-new');
+  const heroCtasNew = document.querySelector('.hero-ctas-new');
+  const watermarkNew = document.querySelector('.ods-watermark-new');
+  const scrollHintNew = document.querySelector('.scroll-hint-new');
+  const clampVal = (v,a,b) => Math.max(a,Math.min(b,v));
+
+  let heroTicking = false;
   window.addEventListener('scroll', () => {
     if (!navbar) return;
+    // Old nav behavior
     const scrolled = window.scrollY > 40;
-    navbar.classList.toggle('scrolled', scrolled);
     if (topbar) topbar.classList.toggle('hidden', scrolled);
+
+    // Hero concept B scroll animations
+    if (!heroTicking) {
+      requestAnimationFrame(() => {
+        const p = clampVal(window.scrollY / window.innerHeight, 0, 1);
+
+        // Logo: 0→0.25
+        if (logoWrapNew) {
+          const lp = clampVal(p / 0.25, 0, 1);
+          logoWrapNew.style.opacity = 1 - lp;
+          logoWrapNew.style.transform = `scale(${1 + lp * 0.12}) translateY(${-lp * 30}px)`;
+        }
+        // Eyebrow: 0.05→0.3
+        if (eyebrowNew) {
+          const ep = clampVal((p - 0.05) / 0.25, 0, 1);
+          eyebrowNew.style.opacity = 1 - ep;
+          eyebrowNew.style.transform = `translateY(${-ep * 25}px)`;
+        }
+        // Headline: 0.08→0.4
+        if (headlineNew) {
+          const hp = clampVal((p - 0.08) / 0.32, 0, 1);
+          headlineNew.style.opacity = 1 - hp;
+          headlineNew.style.transform = `scale(${1 + hp * 0.06}) translateY(${-hp * 35}px)`;
+        }
+        // Sub: 0.12→0.4
+        if (heroSubNew) {
+          const sp = clampVal((p - 0.12) / 0.28, 0, 1);
+          heroSubNew.style.opacity = 1 - sp;
+          heroSubNew.style.transform = `translateY(${-sp * 25}px)`;
+        }
+        // CTAs: 0.15→0.4
+        if (heroCtasNew) {
+          const cp = clampVal((p - 0.15) / 0.25, 0, 1);
+          heroCtasNew.style.opacity = 1 - cp;
+          heroCtasNew.style.transform = `translateY(${-cp * 20}px)`;
+        }
+        // Watermark
+        if (watermarkNew) {
+          watermarkNew.style.opacity = clampVal(1 - p * 1.5, 0, 1);
+        }
+        // Scroll hint
+        if (scrollHintNew) {
+          scrollHintNew.style.opacity = clampVal(1 - p * 5, 0, 1);
+        }
+        // Nav + topbar visible when scrolled past hero
+        if (p > 0.6) {
+          navbar.classList.add('nav-visible');
+          if (topbar) topbar.classList.add('topbar-visible');
+        } else {
+          navbar.classList.remove('nav-visible');
+          if (topbar) topbar.classList.remove('topbar-visible');
+        }
+
+        heroTicking = false;
+      });
+      heroTicking = true;
+    }
   }, { passive: true });
+
+  // ─── FLOATING PARTICLES ───
+  (function(){
+    const container = document.getElementById('heroParticlesNew');
+    if (!container) return;
+    const types = ['circle','dot','ring','cross','diamond'];
+    for(let i=0;i<15;i++){
+      const el = document.createElement('div');
+      const type = types[Math.floor(Math.random()*types.length)];
+      const size = 6 + Math.random()*18;
+      el.className = 'hp-new hp-new--'+type;
+      el.style.width = size+'px';
+      el.style.height = size+'px';
+      el.style.left = (5+Math.random()*90)+'%';
+      el.style.bottom = (-10-Math.random()*20)+'%';
+      el.style.animationDuration = (12+Math.random()*20)+'s';
+      el.style.animationDelay = (Math.random()*15)+'s';
+      container.appendChild(el);
+    }
+  })();
+
+  // ─── SAVINGS BARS ANIMATION ───
+  const ecoCardObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        setTimeout(() => {
+          document.querySelectorAll('.ec-bar-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width + '%';
+          });
+        }, 400);
+        ecoCardObs.disconnect();
+      }
+    });
+  }, {threshold: 0.3});
+  const ecoCard = document.querySelector('.eco-card');
+  if (ecoCard) ecoCardObs.observe(ecoCard);
+
+  // ─── REVEAL OBSERVER FOR ECO SECTION ───
+  const rvObsNew = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('v');rvObsNew.unobserve(e.target);}});
+  }, {threshold:0.1});
+  document.querySelectorAll('.rv-new').forEach(el => rvObsNew.observe(el));
 
   // ─── MOBILE MENU ───
   function toggleMenu() {
@@ -3979,6 +4265,15 @@
 
   const heroCard = document.querySelector('.hero-card');
   if (heroCard) progressObserver.observe(heroCard);
+
+  // ─── LOGO → SCROLL TO TOP ───
+  const navLogo = document.querySelector('.nav-logo');
+  if (navLogo) {
+    navLogo.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   // ─── SMOOTH NAV LINKS ───
   document.querySelectorAll('a[href^="#"]').forEach(link => {
