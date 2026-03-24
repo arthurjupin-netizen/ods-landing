@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ODS — Chef-d'Oeuvre Épuré</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Roman&family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#140A00;--orange:#FF7B00;--yellow:#FFC300;--white:#FBFBF4;}
+body{font-family:'Raleway',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;}
+
+/* ═══════ HERO ═══════ */
+.hero{
+  position:fixed;top:0;left:0;right:0;height:100svh;z-index:1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--white);overflow:hidden;
+}
+
+/* Subtle warm gradient wash that moves */
+.hero-wash{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 30%, rgba(255,195,0,0.06), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 30% 70%, rgba(255,123,0,0.04), transparent 60%);
+  animation:washMove 20s ease-in-out infinite alternate;
+}
+@keyframes washMove{
+  0%{transform:translate(0,0) scale(1);}
+  100%{transform:translate(30px,-20px) scale(1.1);}
+}
+
+/* ═══════ LOGO WITH SHINE EFFECT ═══════ */
+.logo-wrap{
+  position:relative;margin-bottom:48px;
+  opacity:0;transform:scale(0.8) translateY(20px);
+  animation:logoEnter 1.2s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;
+}
+@keyframes logoEnter{
+  0%{opacity:0;transform:scale(0.8) translateY(20px);}
+  60%{opacity:1;transform:scale(1.03) translateY(-3px);}
+  100%{opacity:1;transform:scale(1) translateY(0);}
+}
+.logo-img{
+  width:clamp(120px,15vw,180px);height:auto;display:block;
+  filter:none;
+}
+
+/* Giant ODS watermark behind */
+.ods-watermark{
+  position:absolute;top:50%;right:-5vw;
+  transform:translateY(-55%);
+  font-family:'Crimson Roman',serif;
+  font-size:clamp(200px,35vw,500px);
+  font-weight:900;letter-spacing:-0.05em;
+  color:transparent;
+  -webkit-text-stroke:1.5px rgba(255,123,0,0.06);
+  line-height:0.85;pointer-events:none;user-select:none;
+  opacity:0;animation:watermarkIn 1.5s ease 0.5s forwards;
+}
+@keyframes watermarkIn{to{opacity:1;}}
+
+/* ═══════ FLOATING ELEMENTS ═══════ */
+.hero-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;}
+.hp{
+  position:absolute;border-radius:50%;opacity:0;
+  animation:hpFloat linear infinite;
+}
+.hp--circle{border:1.5px solid rgba(255,123,0,0.08);}
+.hp--dot{background:rgba(255,195,0,0.1);}
+.hp--ring{border:1px solid rgba(255,195,0,0.06);}
+.hp--cross{border:none;border-radius:0;width:12px!important;height:12px!important;}
+.hp--cross::before,.hp--cross::after{
+  content:'';position:absolute;background:rgba(255,123,0,0.07);border-radius:1px;
+}
+.hp--cross::before{width:100%;height:1.5px;top:50%;transform:translateY(-50%);}
+.hp--cross::after{width:1.5px;height:100%;left:50%;transform:translateX(-50%);}
+.hp--diamond{border-radius:2px!important;border:1.5px solid rgba(255,123,0,0.06);transform:rotate(45deg);}
+
+@keyframes hpFloat{
+  0%{opacity:0;transform:translateY(0) rotate(0deg);}
+  10%{opacity:1;}
+  90%{opacity:1;}
+  100%{opacity:0;transform:translateY(-100vh) rotate(180deg);}
+}
+
+/* ═══════ TEXT ═══════ */
+.hero-text{position:relative;z-index:2;text-align:center;padding:0 24px;}
+
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:12px;margin-bottom:28px;
+  opacity:0;animation:fadeUp 0.7s ease 1s forwards;
+}
+.ey-line{width:32px;height:1.5px;border-radius:2px;background:linear-gradient(90deg,var(--orange),var(--yellow));}
+.ey-text{font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--orange);}
+
+.hero-headline{
+  font-family:'Crimson Roman',serif;
+  font-size:clamp(40px,6vw,90px);font-weight:900;
+  line-height:1;letter-spacing:-0.05em;
+  margin-bottom:28px;
+}
+.hl{display:block;overflow:hidden;padding-bottom:0.08em;}
+.hl-in{display:block;opacity:0;transform:translateY(110%);}
+.hl:nth-child(1) .hl-in{animation:slideUp 1s cubic-bezier(0.16,1,0.3,1) 1.2s forwards;}
+.hl:nth-child(2) .hl-in{animation:slideUp 1s cubic-bezier(0.16,1,0.3,1) 1.35s forwards;}
+@keyframes slideUp{to{opacity:1;transform:translateY(0);}}
+
+.hl-grad{
+  background:linear-gradient(90deg,var(--orange),var(--yellow));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+.hero-sub{
+  font-size:clamp(15px,1.4vw,18px);line-height:1.75;
+  color:rgba(20,10,0,0.45);max-width:520px;margin:0 auto 40px;
+  opacity:0;animation:fadeUp 0.7s ease 1.7s forwards;
+}
+
+.hero-ctas{
+  display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+  opacity:0;animation:fadeUp 0.7s ease 1.9s forwards;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:18px 40px;border-radius:100px;font-weight:700;font-size:15px;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:all 0.4s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--orange),var(--yellow));color:var(--black);
+  box-shadow:0 4px 24px rgba(255,123,0,0.25);
+}
+.btn-primary::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
+  transform:translateX(-100%);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(255,123,0,0.35);}
+.btn-primary:hover::after{animation:shimmer 0.6s ease forwards;}
+@keyframes shimmer{to{transform:translateX(100%);}}
+
+.btn-outline{
+  background:transparent;color:var(--black);
+  border:1.5px solid rgba(20,10,0,0.1);
+}
+.btn-outline:hover{border-color:rgba(20,10,0,0.25);background:rgba(20,10,0,0.02);}
+
+/* ═══════ SAVINGS CARD ═══════ */
+.savings-card{
+  background:rgba(255,255,255,0.7);backdrop-filter:blur(12px);
+  border:1px solid rgba(20,10,0,0.06);border-radius:20px;
+  padding:32px;max-width:420px;margin-top:48px;
+  opacity:0;animation:fadeUp 0.7s ease 2.2s forwards;
+  box-shadow:0 8px 40px rgba(20,10,0,0.04);
+}
+.sc-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+.sc-title{font-size:11px;font-weight:700;letter-spacing:0.1em;color:rgba(20,10,0,0.45);text-transform:uppercase;}
+.sc-badge{
+  font-size:10px;font-weight:600;letter-spacing:0.05em;
+  color:var(--orange);border:1.5px solid var(--orange);
+  border-radius:50px;padding:4px 12px;
+  position:relative;
+}
+.sc-badge::before{
+  content:'';width:6px;height:6px;border-radius:50%;background:var(--orange);
+  display:inline-block;margin-right:6px;animation:livePulse 2s ease-in-out infinite;
+}
+@keyframes livePulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.sc-amount{
+  font-family:'Crimson Roman',serif;font-size:clamp(42px,5vw,56px);font-weight:800;
+  background:linear-gradient(90deg,var(--orange),var(--yellow));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1.1;
+}
+.sc-amount-label{font-size:13px;color:rgba(20,10,0,0.4);margin-top:4px;margin-bottom:24px;}
+.sc-bar-row{margin-bottom:14px;}
+.sc-bar-row:last-child{margin-bottom:0;}
+.sc-bar-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.sc-bar-name{font-size:13px;font-weight:500;color:var(--noir);}
+.sc-bar-pct{font-size:13px;font-weight:700;color:var(--orange);}
+.sc-bar-track{height:6px;border-radius:3px;background:rgba(20,10,0,0.06);overflow:hidden;}
+.sc-bar-fill{
+  height:100%;border-radius:3px;
+  background:linear-gradient(90deg,var(--orange),var(--yellow));
+  width:0;transition:width 1.5s cubic-bezier(0.25,1,0.5,1);
+}
+
+/* ═══════ SCROLL HINT ═══════ */
+.scroll-hint{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  z-index:5;display:flex;flex-direction:column;align-items:center;gap:8px;
+  opacity:0;animation:fadeUp 0.5s ease 2.6s forwards;
+}
+.sh-line{width:1px;height:44px;background:rgba(20,10,0,0.08);position:relative;overflow:hidden;}
+.sh-line::after{
+  content:'';position:absolute;top:-100%;left:0;width:1px;height:100%;
+  background:var(--orange);animation:scrollPulse 2.2s ease-in-out infinite;
+}
+@keyframes scrollPulse{0%{top:-100%;}50%{top:100%;}100%{top:100%;}}
+.sh-text{font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(20,10,0,0.2);}
+
+@keyframes fadeUp{0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);}}
+
+/* ═══════ ANIMATED LINE — draws across screen ═══════ */
+.draw-line{
+  position:absolute;top:50%;left:0;right:0;height:1px;z-index:0;
+  background:linear-gradient(90deg,transparent,rgba(255,123,0,0.06),transparent);
+  transform:scaleX(0);transform-origin:center;
+  animation:drawLine 2s cubic-bezier(0.16,1,0.3,1) 0.6s forwards;
+}
+@keyframes drawLine{to{transform:scaleX(1);}}
+
+/* ═══════ APPLE-STYLE SCROLL ═══════ */
+.hero-spacer{height:100svh;}
+
+.sticky-nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(251,251,244,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(20,10,0,0.05);
+  padding:14px 6vw;display:flex;align-items:center;justify-content:space-between;
+  transform:translateY(-100%);opacity:0;
+  transition:transform 0.5s cubic-bezier(0.4,0,0.2,1),opacity 0.5s ease;
+}
+.sticky-nav.visible{transform:translateY(0);opacity:1;}
+.sn-logo-link{display:flex;}
+.sn-logo{height:32px;width:auto;cursor:pointer;transition:opacity 0.2s;}
+.sn-logo:hover{opacity:0.7;}
+.sn-links{display:flex;gap:24px;}
+.sn-links a{font-size:13px;font-weight:600;color:rgba(20,10,0,0.5);text-decoration:none;transition:color 0.2s;}
+.sn-links a:hover{color:var(--orange);}
+.sn-cta{
+  padding:10px 24px;border-radius:100px;font-size:13px;font-weight:700;
+  background:linear-gradient(135deg,var(--orange),var(--yellow));color:var(--black);
+  text-decoration:none;box-shadow:0 2px 12px rgba(255,123,0,0.2);transition:all 0.3s;
+}
+.sn-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(255,123,0,0.35);}
+
+.next-section{
+  position:relative;z-index:10;
+  background:var(--white);
+  min-height:80vh;padding:100px 6vw;
+  box-shadow:0 -40px 80px rgba(20,10,0,0.06);
+  border-radius:40px 40px 0 0;
+}
+.ns-split{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+  text-align:left;
+}
+.ns-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--orange);
+  background:rgba(255,123,0,0.1);border:1px solid rgba(255,123,0,0.2);
+  border-radius:50px;padding:8px 20px;margin-bottom:28px;
+}
+.ns-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--orange);}
+.ns-title{
+  font-family:'Crimson Roman',serif;font-size:clamp(32px,4.5vw,56px);
+  font-weight:900;line-height:1.05;letter-spacing:-0.03em;
+  color:var(--noir);margin-bottom:24px;
+}
+.ns-title em{
+  font-style:normal;
+  background:linear-gradient(90deg,var(--orange),var(--yellow));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.ns-sub{font-size:16px;line-height:1.7;color:rgba(20,10,0,0.5);max-width:480px;margin-bottom:36px;}
+.ns-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary-dark{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:16px 32px;border-radius:100px;font-size:15px;font-weight:700;
+  background:linear-gradient(135deg,var(--orange),var(--yellow));
+  color:var(--noir);text-decoration:none;
+  box-shadow:0 4px 20px rgba(255,123,0,0.3);transition:all 0.3s;
+}
+.btn-primary-dark:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,123,0,0.4);}
+.btn-outline-dark{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:16px 32px;border-radius:100px;font-size:15px;font-weight:600;
+  background:transparent;border:1.5px solid rgba(20,10,0,0.15);
+  color:var(--noir);text-decoration:none;transition:all 0.3s;
+}
+.btn-outline-dark:hover{background:rgba(20,10,0,0.03);border-color:rgba(20,10,0,0.3);}
+/* Savings card in section */
+.savings-card.dark{
+  background:rgba(20,10,0,0.02);backdrop-filter:blur(12px);
+  border:1px solid rgba(20,10,0,0.06);border-radius:20px;
+  padding:32px;opacity:1;animation:none;
+  box-shadow:0 8px 40px rgba(20,10,0,0.04);
+}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.rv.v{opacity:1;transform:translateY(0);}
+.rv1{transition-delay:0.05s;}.rv2{transition-delay:0.1s;}.rv3{transition-delay:0.15s;}
+.rv4{transition-delay:0.2s;}.rv5{transition-delay:0.25s;}.rv6{transition-delay:0.3s;}
+
+@media(max-width:768px){
+  .hero-headline{font-size:clamp(36px,12vw,64px);}
+  .hero-ctas{flex-direction:column;align-items:center;}
+  .btn{width:100%;max-width:320px;justify-content:center;}
+  .ns-split{grid-template-columns:1fr;gap:40px;}
+  .savings-card.dark{max-width:100%;}
+  .sn-links{display:none;}
+  .next-section{border-radius:20px 20px 0 0;padding:60px 5vw;}
+}
+</style>
+</head>
+<body>
+
+<section class="hero" id="hero">
+  <div class="hero-wash"></div>
+  <div class="hero-particles" id="heroParticles"></div>
+  <div class="draw-line"></div>
+  <div class="ods-watermark">ODS</div>
+
+  <!-- Logo with shine -->
+  <div class="logo-wrap">
+    <img src="images/logo-ods.png" alt="ODS Courtage" class="logo-img"/>
+  </div>
+
+  <div class="hero-text">
+    <div class="hero-eyebrow">
+      <div class="ey-line"></div>
+      <span class="ey-text">Premier courtier en énergie renouvelable</span>
+      <div class="ey-line"></div>
+    </div>
+
+    <h1 class="hero-headline">
+      <span class="hl"><span class="hl-in">Votre <span class="hl-grad">courtier</span></span></span>
+      <span class="hl"><span class="hl-in">en énergies renouvelables.</span></span>
+    </h1>
+
+    <p class="hero-sub">ODS compare les offres, négocie les prix et supervise vos travaux de A à Z. Panneaux solaires, pompes à chaleur, bornes de recharge.</p>
+
+    <div class="hero-ctas">
+      <a href="nous-contacter.html" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Bilan énergétique gratuit
+      </a>
+      <a href="comment-ca-marche.html" class="btn btn-outline">Découvrir ODS</a>
+    </div>
+
+  </div>
+
+  <div class="scroll-hint">
+    <div class="sh-line"></div>
+    <span class="sh-text">Défiler</span>
+  </div>
+</section>
+
+<div class="hero-spacer"></div>
+
+<nav class="sticky-nav" id="stickyNav">
+  <a href="#" class="sn-logo-link" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><img src="images/logo-ods.png" alt="ODS" class="sn-logo"/></a>
+  <div class="sn-links">
+    <a href="nos-solutions.html">Nos Solutions</a>
+    <a href="pourquoi-un-courtier.html">Pourquoi un courtier</a>
+    <a href="nos-realisations.html">Réalisations</a>
+    <a href="nous-contacter.html">Contact</a>
+  </div>
+  <a href="nous-contacter.html" class="sn-cta">Bilan gratuit</a>
+</nav>
+
+<section class="next-section" id="nextSection">
+  <div class="next-inner ns-split">
+    <div class="ns-left">
+      <div class="ns-badge rv">N°1 du courtage énergie renouvelable</div>
+      <h2 class="ns-title rv rv1">L'énergie renouvelable,<br><em>enfin accessible<br>à tous.</em></h2>
+      <p class="ns-sub rv rv2">Votre éco-courtier négocie les meilleures offres en panneaux solaires, climatisation, pompes à chaleur et bornes de recharge.</p>
+      <div class="ns-ctas rv rv3">
+        <a href="nous-contacter.html" class="btn btn-primary-dark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Bilan gratuit
+        </a>
+        <a href="comment-ca-marche.html" class="btn btn-outline-dark">Découvrir</a>
+      </div>
+    </div>
+    <div class="ns-right rv rv2">
+      <div class="savings-card dark">
+        <div class="sc-header">
+          <span class="sc-title">Économies annuelles</span>
+          <span class="sc-badge">En direct</span>
+        </div>
+        <div class="sc-amount">1 840€</div>
+        <div class="sc-amount-label">économisés par an en moyenne</div>
+        <div class="sc-bar-row">
+          <div class="sc-bar-info"><span class="sc-bar-name">Panneaux solaires</span><span class="sc-bar-pct">78%</span></div>
+          <div class="sc-bar-track"><div class="sc-bar-fill" data-width="78"></div></div>
+        </div>
+        <div class="sc-bar-row">
+          <div class="sc-bar-info"><span class="sc-bar-name">PAC Air/Air</span><span class="sc-bar-pct">62%</span></div>
+          <div class="sc-bar-track"><div class="sc-bar-fill" data-width="62"></div></div>
+        </div>
+        <div class="sc-bar-row">
+          <div class="sc-bar-info"><span class="sc-bar-name">PAC Air/Eau</span><span class="sc-bar-pct">70%</span></div>
+          <div class="sc-bar-track"><div class="sc-bar-fill" data-width="70"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// ═══════ SCROLL — APPLE STYLE ═══════
+const stickyNav = document.getElementById('stickyNav');
+const heroText = document.querySelector('.hero-text');
+const logoWrap = document.querySelector('.logo-wrap');
+const scrollHint = document.querySelector('.scroll-hint');
+const eyebrow = document.querySelector('.hero-eyebrow');
+const headline = document.querySelector('.hero-headline');
+const heroSub = document.querySelector('.hero-sub');
+const heroCtas = document.querySelector('.hero-ctas');
+const watermark = document.querySelector('.ods-watermark');
+const clamp = (v,a,b) => Math.max(a,Math.min(b,v));
+
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const p = clamp(window.scrollY / window.innerHeight, 0, 1);
+
+      // Staggered fade — each element at different scroll points
+      // Logo: 0→0.25
+      const lp = clamp(p / 0.25, 0, 1);
+      logoWrap.style.opacity = 1 - lp;
+      logoWrap.style.transform = `scale(${1 + lp * 0.12}) translateY(${-lp * 30}px)`;
+
+      // Eyebrow: 0.05→0.3
+      const ep = clamp((p - 0.05) / 0.25, 0, 1);
+      eyebrow.style.opacity = 1 - ep;
+      eyebrow.style.transform = `translateY(${-ep * 25}px)`;
+
+      // Headline: 0.08→0.4
+      const hp = clamp((p - 0.08) / 0.32, 0, 1);
+      headline.style.opacity = 1 - hp;
+      headline.style.transform = `scale(${1 + hp * 0.06}) translateY(${-hp * 35}px)`;
+
+      // Sub text: 0.12→0.4
+      const sp = clamp((p - 0.12) / 0.28, 0, 1);
+      heroSub.style.opacity = 1 - sp;
+      heroSub.style.transform = `translateY(${-sp * 25}px)`;
+
+      // CTAs: 0.15→0.4
+      const cp = clamp((p - 0.15) / 0.25, 0, 1);
+      heroCtas.style.opacity = 1 - cp;
+      heroCtas.style.transform = `translateY(${-cp * 20}px)`;
+
+
+      // Watermark: fades with parallax
+      if (watermark) {
+        watermark.style.opacity = clamp(1 - p * 1.5, 0, 1);
+      }
+
+      // Scroll hint: instant
+      scrollHint.style.opacity = clamp(1 - p * 5, 0, 1);
+
+      // Sticky nav when past hero
+      stickyNav.classList.toggle('visible', p > 0.6);
+
+      ticking = false;
+    });
+    ticking = true;
+  }
+}, { passive: true });
+
+// ═══════ REVEAL ═══════
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); obs.unobserve(e.target); }});
+}, { threshold: 0.1 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+// ═══════ COUNTER ANIMATION ═══════
+setTimeout(() => {
+  document.querySelectorAll('.stat-val[data-to]').forEach(el => {
+    const to = +el.dataset.to, pre = el.dataset.pre||'', suf = el.dataset.suf||'';
+    let v = 0; const step = to / 30;
+    const iv = setInterval(() => {
+      v += step; if (v >= to) { v = to; clearInterval(iv); }
+      el.textContent = pre + Math.round(v) + suf;
+    }, 25);
+  });
+}, 2200);
+// Floating particles
+(function(){
+  const container = document.getElementById('heroParticles');
+  const types = ['circle','dot','ring','cross','diamond'];
+  const count = 15;
+  for(let i=0;i<count;i++){
+    const el = document.createElement('div');
+    const type = types[Math.floor(Math.random()*types.length)];
+    const size = 6 + Math.random()*18;
+    el.className = 'hp hp--'+type;
+    el.style.width = size+'px';
+    el.style.height = size+'px';
+    el.style.left = (5+Math.random()*90)+'%';
+    el.style.bottom = (-10-Math.random()*20)+'%';
+    el.style.animationDuration = (12+Math.random()*20)+'s';
+    el.style.animationDelay = (Math.random()*15)+'s';
+    container.appendChild(el);
+  }
+})();
+
+// Animate savings bars when section is visible
+const savingsObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      setTimeout(() => {
+        document.querySelectorAll('.sc-bar-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+      }, 400);
+      savingsObs.disconnect();
+    }
+  });
+}, {threshold: 0.3});
+const savingsEl = document.querySelector('.savings-card');
+if (savingsEl) savingsObs.observe(savingsEl);
+</script>
+</body>
+</html>
