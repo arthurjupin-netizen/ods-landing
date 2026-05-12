@@ -32,7 +32,8 @@
 
     :root {
       --black:    #2A1A0A;
-      --dark-bg:  #5A3D20;
+      --dark-bg:  #F5EDE0;
+      --cream:    #F5EDE0;
       --orange:   #FF7B00;
       --yellow:   #FFC300;
       --white:    #FBFBF4;
@@ -114,7 +115,7 @@
 
     /* ── HERO BANNER ── */
     .legal-hero {
-      background: radial-gradient(ellipse at 30% 110%, #4a3220 0%, #3d2815 55%, #352210 100%);
+      background: #F5EDE0;
       padding: 120px 0 60px;
       text-align: center;
     }
@@ -217,7 +218,7 @@
       .nav-burger { display:flex; }
     }
   @media(hover:none),(pointer:coarse){#cursor,.cursor,#cursorRing,.cursor-ring{display:none!important;width:0!important;height:0!important}}</style>
-<link rel="stylesheet" href="mobile.css?v=7">
+<link rel="stylesheet" href="mobile.css?v=8">
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mentions Légales — ODS Courtage" />
   <meta name="twitter:description" content="Mentions légales du site ODS Courtage, courtier en énergie renouvelable pour les particuliers en France." />
@@ -409,9 +410,9 @@
           <div style="display:flex; align-items:center; gap:12px; color:#555; font-size:14px;">contact@odscourtage.com</div>
         </div>
       </div>
-      <div style="background:radial-gradient(ellipse at 30% 110%, #4a3220 0%, #3d2815 55%, #352210 100%); border-radius:20px; padding:48px; color:#fff;" class="footer-form-card">
-        <h2 style="font-size:30px; font-weight:800; color:#fff; line-height:1.2;">Demandez votre bilan gratuit</h2>
-        <p style="margin-top:8px; color:#a08060; font-size:14px;">Réponse sous 24h par un conseiller dédié</p>
+      <div style="background:#F5EDE0; border:1px solid rgba(20,10,0,.06); border-radius:20px; padding:48px; color:#2A1A0A;" class="footer-form-card">
+        <h2 style="font-size:30px; font-weight:800; color:#2A1A0A; line-height:1.2;">Demandez votre bilan gratuit</h2>
+        <p style="margin-top:8px; color:rgba(20,10,0,.6); font-size:14px;">Réponse sous 24h par un conseiller dédié</p>
         <form id="footerForm" action="https://formsubmit.co/ajax/contact@odscourtage.com" method="POST" style="margin-top:28px; display:flex; flex-direction:column; gap:16px;">
           <input type="hidden" name="_subject" value="Nouvelle demande — ODS Courtage"/>
           <input type="hidden" name="_template" value="table"/>
@@ -420,29 +421,29 @@
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;" class="footer-form-row">
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Prénom</label>
-              <input type="text" name="prenom" placeholder="Jean" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Prénom</label>
+              <input type="text" name="prenom" placeholder="Jean" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Nom</label>
-              <input type="text" name="nom" placeholder="Dupont" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Nom</label>
+              <input type="text" name="nom" placeholder="Dupont" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
           </div>
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;" class="footer-form-row">
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Email</label>
-              <input type="email" name="email" placeholder="jean@exemple.fr" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Email</label>
+              <input type="email" name="email" placeholder="jean@exemple.fr" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Téléphone</label>
-              <input type="tel" name="telephone" placeholder="06 00 00 00 00" style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Téléphone</label>
+              <input type="tel" name="telephone" placeholder="06 00 00 00 00" style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
           </div>
           <button type="submit" id="footerFormBtn" style="width:100%; padding:16px; background:linear-gradient(135deg,#f5b030,#e07020); border:none; border-radius:50px; color:#1a0a00; font-size:15px; font-weight:700; cursor:pointer;">Envoyer ma demande</button>
           <div id="footerFormSuccess" style="display:none;text-align:center;padding:20px;">
             <div style="font-size:40px;margin-bottom:12px;">&#10003;</div>
             <p style="font-size:16px;font-weight:600;color:#FFC300;">Demande envoyee avec succes !</p>
-            <p style="font-size:13px;color:rgba(251,251,244,.5);margin-top:6px;">Nous vous recontacterons sous 24h.</p>
+            <p style="font-size:13px;color:rgba(20,10,0,.5);margin-top:6px;">Nous vous recontacterons sous 24h.</p>
           </div>
         </form>
       </div>

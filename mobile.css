@@ -34,7 +34,7 @@
 .mobile-menu-shared {
   position: fixed;
   inset: 0;
-  background: #5A3D20;
+  background: #F5EDE0;
   z-index: 99999;
   display: flex;
   flex-direction: column;
@@ -59,7 +59,7 @@
   font-family: 'Inter', 'Raleway', sans-serif;
   font-size: 18px;
   font-weight: 600;
-  color: #FBFBF4;
+  color: #2A1A0A;
   text-decoration: none;
   transition: color .2s ease, transform .2s ease, opacity .3s ease;
   opacity: 0;
@@ -100,7 +100,7 @@
   position: fixed;
   top: 20px; right: 24px;
   background: none; border: none;
-  color: #FBFBF4;
+  color: #2A1A0A;
   font-size: 28px;
   cursor: pointer;
   z-index: 100000;

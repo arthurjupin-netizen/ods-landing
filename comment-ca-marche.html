@@ -58,7 +58,8 @@
 
     :root {
       --black:    #2A1A0A;
-      --dark-bg:  #5A3D20;
+      --dark-bg:  #F5EDE0;
+      --cream:    #F5EDE0;
       --orange:   #FF7B00;
       --yellow:   #FFC300;
       --white:    #FBFBF4;
@@ -123,11 +124,11 @@
     }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,123,0,0.5); }
     .btn-ghost {
-      background: transparent; color: var(--white);
-      border: 1.5px solid rgba(251,251,244,0.3);
+      background: transparent; color: var(--black);
+      border: 1.5px solid rgba(20,10,0,0.15);
       -webkit-backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
     }
-    .btn-ghost:hover { background: rgba(251,251,244,0.1); border-color: rgba(251,251,244,0.6); }
+    .btn-ghost:hover { background: rgba(20,10,0,0.1); border-color: rgba(20,10,0,0.6); }
 
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
@@ -156,7 +157,7 @@
     .topbar {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 1010; height: 40px;
-      background: rgba(60,35,15,0.96);
+      background: #F5EDE0;
       border-bottom: 1px solid rgba(255,123,0,0.18);
       display: flex; align-items: center; justify-content: center;
       transition: transform 0.35s ease;
@@ -169,7 +170,7 @@
     }
     .topbar-phone { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; transition: opacity .2s; }
     .topbar-phone:hover { opacity: .8; }
-    .topbar-number { font-size: 13.5px; font-weight: 700; color: var(--white); letter-spacing: .04em; font-family: 'Raleway', sans-serif; }
+    .topbar-number { font-size: 13.5px; font-weight: 700; color: var(--black); letter-spacing: .04em; font-family: 'Raleway', sans-serif; }
     .topbar-label { font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); padding: 3px 10px; background: rgba(255,123,0,.12); border: 1px solid rgba(255,123,0,.25); border-radius: 20px; }
     .topbar-sep { width: 1px; height: 16px; background: rgba(255,255,255,.12); }
 
@@ -187,7 +188,7 @@
     .logo { display: inline-flex; align-items: center; text-decoration: none; line-height: 1; flex-shrink: 0; }
     .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; flex: 1; justify-content: center; }
     .nav-links a {
-      font-size: 12.5px; font-weight: 500; color: rgba(251,251,244,0.7);
+      font-size: 12.5px; font-weight: 500; color: rgba(20,10,0,0.7);
       text-decoration: none; transition: color var(--transition);
       white-space: nowrap; position: relative;
     }
@@ -197,7 +198,7 @@
       transform: scaleX(0); transform-origin: left;
       transition: transform .25s ease; border-radius: 2px;
     }
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover { color: var(--black); }
     .nav-links a:hover::after { transform: scaleX(1); }
     .nav-links a.active { color: var(--orange); }
     .nav-links a.active::after { transform: scaleX(1); }
@@ -205,7 +206,7 @@
 
     /* ─── HERO ─── */
     .page-hero {
-      min-height: 65vh; background: var(--dark-bg);
+      min-height: 65vh; background: var(--white);
       display: flex; align-items: center;
       position: relative; overflow: hidden;
       padding: 160px 0 80px;
@@ -224,10 +225,10 @@
     .hero-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--gradient); border-radius: 2px; }
     .page-hero h1 {
       font-size: clamp(38px, 5vw, 68px); font-weight: 900;
-      line-height: 1.08; letter-spacing: -0.03em; color: var(--white); margin-bottom: 24px;
+      line-height: 1.08; letter-spacing: -0.03em; color: var(--black); margin-bottom: 24px;
     }
     .page-hero .hero-sub {
-      font-size: 18px; line-height: 1.7; color: rgba(251,251,244,0.6);
+      font-size: 18px; line-height: 1.7; color: rgba(20,10,0,0.6);
       margin-bottom: 0; max-width: 600px;
     }
     .hero-content-inner { position: relative; z-index: 1; }
@@ -338,7 +339,7 @@
     }
     .faq-title {
       font-family: 'Crimson Roman', serif;
-      font-size: clamp(28px, 3.2vw, 46px); color: var(--white); line-height: 1.15;
+      font-size: clamp(28px, 3.2vw, 46px); color: var(--black); line-height: 1.15;
     }
     .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
     details.faq-item {
@@ -349,7 +350,7 @@
     details.faq-item summary {
       display: flex; align-items: center; justify-content: space-between;
       padding: 22px 28px; cursor: pointer;
-      font-size: 16px; font-weight: 600; color: var(--white);
+      font-size: 16px; font-weight: 600; color: var(--black);
       list-style: none; -webkit-user-select: none; -moz-user-select: none; user-select: none;
     }
     details.faq-item summary::-webkit-details-marker { display: none; }
@@ -366,7 +367,7 @@
     details.faq-item summary:hover { background: rgba(255,123,0,0.05); }
     .faq-answer {
       padding: 0 28px 22px;
-      font-size: 15px; line-height: 1.8; color: rgba(251,251,244,0.6);
+      font-size: 15px; line-height: 1.8; color: rgba(20,10,0,0.6);
     }
 
     /* ─── TESTIMONIALS MINI ─── */
@@ -383,7 +384,7 @@
     }
     .testi-mini-card:hover { border-color: rgba(255,123,0,.3); transform: translateY(-4px); }
     .testi-stars { display: flex; gap: 4px; margin-bottom: 14px; }
-    .testi-text { font-size: 14px; color: rgba(251,251,244,.68); line-height: 1.78; margin-bottom: 22px; }
+    .testi-text { font-size: 14px; color: rgba(20,10,0,.68); line-height: 1.78; margin-bottom: 22px; }
     .testi-author { display: flex; align-items: center; gap: 12px; }
     .testi-avatar {
       width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
@@ -391,8 +392,8 @@
       font-family: 'Crimson Roman', serif; font-size: 16px; color: var(--black); font-weight: 700;
       background: linear-gradient(135deg, #FF7B00, #FFC300);
     }
-    .testi-name { font-weight: 600; font-size: 14px; color: var(--white); }
-    .testi-city { font-size: 12px; color: rgba(251,251,244,.38); margin-top: 2px; }
+    .testi-name { font-weight: 600; font-size: 14px; color: var(--black); }
+    .testi-city { font-size: 12px; color: rgba(20,10,0,.38); margin-top: 2px; }
 
     /* ─── CTA SECTION ─── */
     #cta-section {
@@ -413,9 +414,9 @@
     }
     .cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
     .cta-eyebrow { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; }
-    .cta-title { font-family: 'Crimson Roman', serif; font-size: clamp(32px, 4vw, 56px); color: var(--white); line-height: 1.1; margin-bottom: 16px; }
-    .cta-sub { font-size: 14px; color: rgba(251,251,244,.45); margin-bottom: 40px; letter-spacing: .04em; }
-    .cta-trust { font-size: 13px; color: rgba(251,251,244,.35); margin-top: 20px; letter-spacing: .03em; }
+    .cta-title { font-family: 'Crimson Roman', serif; font-size: clamp(32px, 4vw, 56px); color: var(--black); line-height: 1.1; margin-bottom: 16px; }
+    .cta-sub { font-size: 14px; color: rgba(20,10,0,.45); margin-bottom: 40px; letter-spacing: .04em; }
+    .cta-trust { font-size: 13px; color: rgba(20,10,0,.35); margin-top: 20px; letter-spacing: .03em; }
 
     /* ─── FOOTER ─── */
     footer {
@@ -434,33 +435,33 @@
       gap: 80px; padding-bottom: 64px; position: relative; z-index: 1;
     }
     .footer-brand .logo { margin-bottom: 20px; display: block; }
-    .footer-tagline { font-size: 15px; line-height: 1.7; color: rgba(251,251,244,0.4); max-width: 300px; margin-bottom: 28px; }
+    .footer-tagline { font-size: 15px; line-height: 1.7; color: rgba(20,10,0,0.4); max-width: 300px; margin-bottom: 28px; }
     .footer-socials { display: flex; gap: 12px; margin-bottom: 28px; }
     .social-btn {
-      width: 40px; height: 40px; background: rgba(251,251,244,0.06);
-      border: 1px solid rgba(251,251,244,0.1); border-radius: 10px;
+      width: 40px; height: 40px; background: rgba(20,10,0,0.06);
+      border: 1px solid rgba(20,10,0,0.1); border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      color: rgba(251,251,244,0.5); cursor: pointer; transition: var(--transition); text-decoration: none;
+      color: rgba(20,10,0,0.5); cursor: pointer; transition: var(--transition); text-decoration: none;
     }
     .social-btn:hover { background: rgba(255,123,0,0.15); border-color: rgba(255,123,0,0.4); color: var(--orange); }
     .footer-contact-info { display: flex; flex-direction: column; gap: 12px; }
-    .footer-contact-item { display: flex; align-items: center; gap: 12px; color: rgba(251,251,244,0.4); font-size: 14px; }
+    .footer-contact-item { display: flex; align-items: center; gap: 12px; color: rgba(20,10,0,0.4); font-size: 14px; }
 
     .footer-nav-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
     .footer-nav-col-title { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; }
     .footer-nav-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .footer-nav-links li a { font-size: 14px; color: rgba(251,251,244,0.45); text-decoration: none; transition: color .2s; }
-    .footer-nav-links li a:hover { color: var(--white); }
+    .footer-nav-links li a { font-size: 14px; color: rgba(20,10,0,0.45); text-decoration: none; transition: color .2s; }
+    .footer-nav-links li a:hover { color: var(--black); }
 
     .footer-bottom {
-      border-top: 1px solid rgba(251,251,244,0.06); padding: 24px 0;
+      border-top: 1px solid rgba(20,10,0,0.06); padding: 24px 0;
       display: flex; align-items: center; justify-content: space-between;
       position: relative; z-index: 1;
     }
-    .footer-bottom p { font-size: 13px; color: rgba(251,251,244,0.25); }
+    .footer-bottom p { font-size: 13px; color: rgba(20,10,0,0.25); }
     .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; color: rgba(251,251,244,0.25); text-decoration: none; transition: color var(--transition); }
-    .footer-links a:hover { color: rgba(251,251,244,0.6); }
+    .footer-links a { font-size: 13px; color: rgba(20,10,0,0.25); text-decoration: none; transition: color var(--transition); }
+    .footer-links a:hover { color: rgba(20,10,0,0.6); }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
@@ -511,7 +512,7 @@
     .nav.scrolled { top: 0; }
     .nav + *:not(.hero):not(.page-hero):not(.legal-hero):not(#hero) { padding-top:64px; }
   @media(hover:none),(pointer:coarse){#cursor,.cursor,#cursorRing,.cursor-ring{display:none!important;width:0!important;height:0!important}}</style>
-<link rel="stylesheet" href="mobile.css?v=7">
+<link rel="stylesheet" href="mobile.css?v=8">
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Comment ça Marche — ODS Courtage" />
   <meta name="twitter:description" content="5 étapes simples pour votre projet énergie renouvelable. De l'audit gratuit à la mise en service, votre éco-courtier gère tout." />
@@ -849,35 +850,35 @@
       <details class="faq-item reveal">
         <summary>Combien de temps dure le processus de A à Z ?</summary>
         <div class="faq-answer">
-          En général, comptez <strong style="color:var(--white);">4 à 8 semaines</strong> selon la solution choisie. L'audit a lieu dans les premiers jours, la comparaison des devis prend environ une semaine, et les démarches administratives peuvent prendre 2 à 4 semaines. L'installation elle-même se déroule en une journée pour la plupart des projets.
+          En général, comptez <strong style="color:var(--black);">4 à 8 semaines</strong> selon la solution choisie. L'audit a lieu dans les premiers jours, la comparaison des devis prend environ une semaine, et les démarches administratives peuvent prendre 2 à 4 semaines. L'installation elle-même se déroule en une journée pour la plupart des projets.
         </div>
       </details>
 
       <details class="faq-item reveal">
         <summary>Est-ce que je dois avancer les aides ?</summary>
         <div class="faq-answer">
-          Non. ODS s'occupe de tout : les aides d'État (MaPrimeRénov', CEE) sont <strong style="color:var(--white);">directement déduites du montant de votre devis</strong>. Vous ne payez que le reste à charge net, après déduction de toutes les subventions disponibles. Aucune avance de votre part.
+          Non. ODS s'occupe de tout : les aides d'État (MaPrimeRénov', CEE) sont <strong style="color:var(--black);">directement déduites du montant de votre devis</strong>. Vous ne payez que le reste à charge net, après déduction de toutes les subventions disponibles. Aucune avance de votre part.
         </div>
       </details>
 
       <details class="faq-item reveal">
         <summary>Y a-t-il des frais de courtage ?</summary>
         <div class="faq-answer">
-          Non, <strong style="color:var(--white);">le service ODS est entièrement gratuit pour vous</strong>. ODS est rémunéré par les installateurs partenaires qui nous versent une commission sur les projets réalisés. Notre indépendance vis-à-vis des marques garantit que nous travaillons toujours dans votre intérêt.
+          Non, <strong style="color:var(--black);">le service ODS est entièrement gratuit pour vous</strong>. ODS est rémunéré par les installateurs partenaires qui nous versent une commission sur les projets réalisés. Notre indépendance vis-à-vis des marques garantit que nous travaillons toujours dans votre intérêt.
         </div>
       </details>
 
       <details class="faq-item reveal">
         <summary>Puis-je annuler si je change d'avis ?</summary>
         <div class="faq-answer">
-          Oui, totalement. <strong style="color:var(--white);">Aucun frais ne vous sera facturé jusqu'à la signature du contrat définitif.</strong> Vous pouvez interrompre le processus à n'importe quelle étape sans aucune pénalité. La loi vous accorde également un délai de rétractation de 14 jours après la signature.
+          Oui, totalement. <strong style="color:var(--black);">Aucun frais ne vous sera facturé jusqu'à la signature du contrat définitif.</strong> Vous pouvez interrompre le processus à n'importe quelle étape sans aucune pénalité. La loi vous accorde également un délai de rétractation de 14 jours après la signature.
         </div>
       </details>
 
       <details class="faq-item reveal">
         <summary>Que se passe-t-il après l'installation ?</summary>
         <div class="faq-answer">
-          ODS assure un <strong style="color:var(--white);">suivi post-installation structuré</strong> : un point de satisfaction à 1 mois, un bilan de performance à 6 mois, et un contrôle annuel à 1 an. En cas de problème technique, notre équipe coordonne l'intervention du prestataire sous garantie. Vous n'êtes jamais seul.
+          ODS assure un <strong style="color:var(--black);">suivi post-installation structuré</strong> : un point de satisfaction à 1 mois, un bilan de performance à 6 mois, et un contrôle annuel à 1 an. En cas de problème technique, notre équipe coordonne l'intervention du prestataire sous garantie. Vous n'êtes jamais seul.
         </div>
       </details>
 
@@ -1027,9 +1028,9 @@
       </div>
 
       <!-- DROITE : FORMULAIRE SOMBRE -->
-      <div style="background:radial-gradient(ellipse at 30% 110%, #4a3220 0%, #3d2815 55%, #352210 100%); border-radius:20px; padding:48px; color:#fff;" class="footer-form-card">
-        <h2 style="font-size:30px; font-weight:800; color:#fff; line-height:1.2;">Demandez votre bilan gratuit</h2>
-        <p style="margin-top:8px; color:#a08060; font-size:14px;">Réponse sous 24h par un conseiller dédié</p>
+      <div style="background:#F5EDE0; border:1px solid rgba(20,10,0,.06); border-radius:20px; padding:48px; color:#2A1A0A;" class="footer-form-card">
+        <h2 style="font-size:30px; font-weight:800; color:#2A1A0A; line-height:1.2;">Demandez votre bilan gratuit</h2>
+        <p style="margin-top:8px; color:rgba(20,10,0,.6); font-size:14px;">Réponse sous 24h par un conseiller dédié</p>
 
         <form id="footerForm" action="https://formsubmit.co/ajax/contact@odscourtage.com" method="POST" style="margin-top:28px; display:flex; flex-direction:column; gap:16px;">
           <input type="hidden" name="_subject" value="Nouvelle demande — ODS Courtage"/>
@@ -1039,29 +1040,29 @@
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;" class="footer-form-row">
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Prénom</label>
-              <input type="text" name="prenom" placeholder="Jean" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Prénom</label>
+              <input type="text" name="prenom" placeholder="Jean" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Nom</label>
-              <input type="text" name="nom" placeholder="Dupont" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Nom</label>
+              <input type="text" name="nom" placeholder="Dupont" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
           </div>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;" class="footer-form-row">
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Email</label>
-              <input type="email" name="email" placeholder="jean@exemple.fr" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Email</label>
+              <input type="email" name="email" placeholder="jean@exemple.fr" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Téléphone</label>
-              <input type="tel" name="telephone" placeholder="06 00 00 00 00" style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Téléphone</label>
+              <input type="tel" name="telephone" placeholder="06 00 00 00 00" style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
           </div>
 
           <div>
-            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Je suis intéressé(e) par</label>
-            <select name="solution" onchange="this.style.color=this.value?'#fff':'#4a3520'" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#4a3520; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; -webkit-appearance:none; cursor:pointer; box-sizing:border-box;">
+            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Je suis intéressé(e) par</label>
+            <select name="solution" onchange="this.style.color=this.value?'#2A1A0A':'rgba(20,10,0,.45)'" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:rgba(20,10,0,.45); font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; -webkit-appearance:none; cursor:pointer; box-sizing:border-box;">
               <option value="">Choisir une solution...</option>
               <option>Panneaux solaires</option>
               <option>Pompe à chaleur Air/Air</option>
@@ -1074,18 +1075,18 @@
           </div>
 
           <div>
-            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Message (optionnel)</label>
-            <textarea name="message" placeholder="Décrivez votre logement, vos besoins ou vos questions..." style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; min-height:110px; resize:vertical; box-sizing:border-box;"></textarea>
+            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Message (optionnel)</label>
+            <textarea name="message" placeholder="Décrivez votre logement, vos besoins ou vos questions..." style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; min-height:110px; resize:vertical; box-sizing:border-box;"></textarea>
           </div>
 
           <button type="submit" id="footerFormBtn" style="width:100%; padding:16px; background:linear-gradient(135deg,#f5b030,#e07020); border:none; border-radius:50px; color:#1a0a00; font-family:'Montserrat','Inter',sans-serif; font-size:15px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; box-shadow:0 0 28px rgba(240,160,48,.35);">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a0a00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2A1A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             Envoyer ma demande
           </button>
           <div id="footerFormSuccess" style="display:none;text-align:center;padding:20px;">
             <div style="font-size:40px;margin-bottom:12px;">&#10003;</div>
             <p style="font-size:16px;font-weight:600;color:#FFC300;">Demande envoyee avec succes !</p>
-            <p style="font-size:13px;color:rgba(251,251,244,.5);margin-top:6px;">Nous vous recontacterons sous 24h.</p>
+            <p style="font-size:13px;color:rgba(20,10,0,.5);margin-top:6px;">Nous vous recontacterons sous 24h.</p>
           </div>
         </form>
       </div>

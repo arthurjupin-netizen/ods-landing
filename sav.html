@@ -44,7 +44,8 @@
 
     :root {
       --black:    #2A1A0A;
-      --dark-bg:  #5A3D20;
+      --dark-bg:  #F5EDE0;
+      --cream:    #F5EDE0;
       --orange:   #FF7B00;
       --yellow:   #FFC300;
       --white:    #FBFBF4;
@@ -60,8 +61,8 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--dark-bg);
-      color: var(--white);
+      background: var(--white);
+      color: var(--black);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       cursor: none;
@@ -108,7 +109,7 @@
       top: 0; left: 0; right: 0;
       z-index: 1010;
       height: 40px;
-      background: rgba(60,35,15,0.96);
+      background: #F5EDE0;
       border-bottom: 1px solid rgba(255,123,0,0.18);
       display: flex;
       align-items: center;
@@ -128,7 +129,7 @@
     }
     .topbar-phone:hover { opacity: .8; }
     .topbar-number {
-      font-size: 13.5px; font-weight: 700; color: #fff;
+      font-size: 13.5px; font-weight: 700; color: #2A1A0A;
       letter-spacing: .04em; font-family: 'Raleway', sans-serif;
     }
     .topbar-label {
@@ -187,24 +188,24 @@
     .hero-badge { display:inline-flex; align-items:center; gap:8px; padding:6px 14px; background:rgba(255,123,0,.12); border:1px solid rgba(255,123,0,.3); border-radius:100px; font-size:11px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--orange); margin-bottom:24px; animation:fadeUp 1s var(--ease) .2s both; }
     h1.hero-title { font-family:'Crimson Roman',serif; font-size:clamp(48px,7vw,86px); font-weight:800; line-height:.95; letter-spacing:-.04em; margin-bottom:28px; animation:lineReveal 1s var(--ease) forwards; }
     @keyframes lineReveal { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-    .hero-desc { font-size:18px; line-height:1.75; color:rgba(251,251,244,.55); max-width:580px; margin-bottom:48px; animation:fadeUp 1s var(--ease) .5s both; }
+    .hero-desc { font-size:18px; line-height:1.75; color:rgba(20,10,0,.55); max-width:580px; margin-bottom:48px; animation:fadeUp 1s var(--ease) .5s both; }
     @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
     .hero-stats { display:flex; gap:40px; flex-wrap:wrap; animation:fadeUp 1s var(--ease) .7s both; }
     .hero-stat { display:flex; flex-direction:column; gap:4px; }
     .hero-stat-value { font-family:'Inter',sans-serif; font-size:26px; font-weight:800; background:var(--grad-text); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-    .hero-stat-label { font-size:13px; color:rgba(251,251,244,.4); letter-spacing:.04em; }
-    .hero-stat-sep { width:1px; background:rgba(251,251,244,.1); align-self:stretch; }
+    .hero-stat-label { font-size:13px; color:rgba(20,10,0,.4); letter-spacing:.04em; }
+    .hero-stat-sep { width:1px; background:rgba(20,10,0,.1); align-self:stretch; }
 
     /* ── CONTACT CARDS ── */
     #contact-cards { padding:80px 0 60px; }
     .contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-    .contact-card { background:#1a0f00; border:1px solid rgba(255,123,0,.15); border-radius:20px; padding:32px 28px; transition:all .3s var(--ease); }
+    .contact-card { background:#fff; border:1px solid rgba(255,123,0,.15); border-radius:20px; padding:32px 28px; transition:all .3s var(--ease); }
     .contact-card:hover { border-color:rgba(255,123,0,.35); transform:translateY(-4px); box-shadow:0 12px 40px rgba(255,123,0,.12); }
     .contact-icon { width:52px; height:52px; border-radius:14px; background:rgba(255,123,0,.1); border:1px solid rgba(255,123,0,.2); display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:20px; }
     .contact-label { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--orange); margin-bottom:8px; }
-    .contact-value { font-family:'Crimson Roman',serif; font-size:22px; font-weight:700; color:var(--white); margin-bottom:6px; }
-    .contact-sub { font-size:13px; color:rgba(251,251,244,.4); line-height:1.5; }
+    .contact-value { font-family:'Crimson Roman',serif; font-size:22px; font-weight:700; color:var(--black); margin-bottom:6px; }
+    .contact-sub { font-size:13px; color:rgba(20,10,0,.4); line-height:1.5; }
     .contact-link { display:inline-flex; align-items:center; gap:6px; margin-top:16px; padding:9px 20px; background:rgba(255,123,0,.1); border:1px solid rgba(255,123,0,.2); border-radius:100px; font-size:13px; font-weight:600; color:var(--orange); text-decoration:none; transition:all .2s ease; }
     .contact-link:hover { background:rgba(255,123,0,.18); border-color:rgba(255,123,0,.4); }
 
@@ -218,8 +219,8 @@
     .engagement-card { background:rgba(255,123,0,.04); border:1px solid rgba(255,123,0,.12); border-radius:18px; padding:28px; display:flex; align-items:flex-start; gap:18px; transition:all .3s var(--ease); }
     .engagement-card:hover { background:rgba(255,123,0,.08); border-color:rgba(255,123,0,.25); transform:translateY(-2px); }
     .engagement-icon { width:48px; height:48px; border-radius:12px; background:rgba(255,123,0,.12); border:1px solid rgba(255,123,0,.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .engagement-title { font-family:'Inter',sans-serif; font-size:16px; font-weight:700; margin-bottom:6px; color:var(--white); }
-    .engagement-desc { font-size:14px; line-height:1.65; color:rgba(251,251,244,.5); }
+    .engagement-title { font-family:'Inter',sans-serif; font-size:16px; font-weight:700; margin-bottom:6px; color:var(--black); }
+    .engagement-desc { font-size:14px; line-height:1.65; color:rgba(20,10,0,.5); }
 
     /* ── FAQ ── */
     #faq { padding:60px 0 80px; }
@@ -227,11 +228,11 @@
     .faq-list { max-width:800px; margin:0 auto; display:flex; flex-direction:column; gap:12px; }
     details.faq-item { background:rgba(255,123,0,.04); border:1px solid rgba(255,123,0,.12); border-radius:14px; overflow:hidden; transition:all .3s var(--ease); }
     details.faq-item[open] { background:rgba(255,123,0,.07); border-color:rgba(255,123,0,.25); }
-    details.faq-item summary { padding:20px 24px; font-size:15px; font-weight:600; color:var(--white); cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    details.faq-item summary { padding:20px 24px; font-size:15px; font-weight:600; color:var(--black); cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:12px; }
     details.faq-item summary::-webkit-details-marker { display:none; }
     details.faq-item summary::after { content:'＋'; font-size:18px; color:var(--orange); transition:transform .3s ease; flex-shrink:0; }
     details.faq-item[open] summary::after { content:'－'; }
-    .faq-answer { padding:0 24px 20px; font-size:14px; line-height:1.75; color:rgba(251,251,244,.55); }
+    .faq-answer { padding:0 24px 20px; font-size:14px; line-height:1.75; color:rgba(20,10,0,.55); }
 
     /* ── FORMULAIRE ── */
     #formulaire { padding:60px 0 100px; }
@@ -240,31 +241,31 @@
     .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
     .form-group { display:flex; flex-direction:column; gap:8px; }
     .form-group.full { grid-column:1/-1; }
-    label { font-size:13px; font-weight:600; color:rgba(251,251,244,.6); letter-spacing:.04em; }
+    label { font-size:13px; font-weight:600; color:rgba(20,10,0,.6); letter-spacing:.04em; }
     input, select, textarea {
-      background:#1a0f00;
+      background:#fff;
       border:1px solid rgba(255,123,0,.2);
       border-radius:10px;
       padding:13px 16px;
       font-family:'Inter',sans-serif;
       font-size:14px;
-      color:var(--white);
+      color:var(--black);
       outline:none;
       transition:border-color .2s ease;
       width:100%;
     }
-    input::placeholder, textarea::placeholder { color:rgba(251,251,244,.25); }
+    input::placeholder, textarea::placeholder { color:rgba(20,10,0,.25); }
     input:focus, select:focus, textarea:focus { border-color:#FF7B00; box-shadow:0 0 0 3px rgba(255,123,0,.08); }
-    select option { background:#1a0f00; }
+    select option { background:#fff; }
     textarea { resize:vertical; min-height:100px; }
     .form-submit { display:block; width:100%; padding:16px; background:linear-gradient(90deg,#FF7B00,#FFC300); color:#140A00; font-family:'Inter',sans-serif; font-weight:800; font-size:16px; border:none; border-radius:100px; cursor:pointer; margin-top:8px; transition:all .3s var(--ease); box-shadow:0 6px 24px rgba(255,123,0,.35); }
     .form-submit:hover { transform:translateY(-2px); box-shadow:0 10px 36px rgba(255,123,0,.5); }
 
     /* ── FOOTER ── */
-    footer { background:var(--dark-bg); border-top:1px solid rgba(251,251,244,.06); padding:32px 0; }
+    footer { background:var(--dark-bg); border-top:1px solid rgba(20,10,0,.06); padding:32px 0; }
     .footer-row { display:flex; align-items:center; justify-content:space-between; }
-    .footer-copy { font-size:13px; color:rgba(251,251,244,.25); }
-    .footer-back { display:inline-flex; align-items:center; gap:8px; font-size:13px; color:rgba(251,251,244,.4); text-decoration:none; transition:color .3s var(--ease); }
+    .footer-copy { font-size:13px; color:rgba(20,10,0,.25); }
+    .footer-back { display:inline-flex; align-items:center; gap:8px; font-size:13px; color:rgba(20,10,0,.4); text-decoration:none; transition:color .3s var(--ease); }
     .footer-back:hover { color:var(--orange); }
 
     @media(max-width:768px) {
@@ -281,7 +282,7 @@
       .nav-burger { display:flex; }
     }
   @media(hover:none),(pointer:coarse){#cursor,.cursor,#cursorRing,.cursor-ring{display:none!important;width:0!important;height:0!important}}</style>
-<link rel="stylesheet" href="mobile.css?v=7">
+<link rel="stylesheet" href="mobile.css?v=8">
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Service Après-Vente — ODS Courtage" />
   <meta name="twitter:description" content="SAV ODS Courtage : assistance technique, maintenance et suivi de vos installations d'énergie renouvelable." />
@@ -540,7 +541,7 @@
       <div class="form-header">
         <div class="section-eyebrow" style="justify-content:center;">Formulaire SAV</div>
         <h2 class="section-h2">Signaler un problème</h2>
-        <p style="margin-top:12px;font-size:15px;color:rgba(251,251,244,.45);">Décrivez votre situation, nous vous recontactons sous 24h ouvrées.</p>
+        <p style="margin-top:12px;font-size:15px;color:rgba(20,10,0,.45);">Décrivez votre situation, nous vous recontactons sous 24h ouvrées.</p>
       </div>
       <form id="savForm">
         <input type="hidden" name="_subject" value="Demande SAV — ODS Courtage"/>
@@ -627,9 +628,9 @@
       </div>
 
       <!-- DROITE : FORMULAIRE SOMBRE -->
-      <div style="background:radial-gradient(ellipse at 30% 110%, #4a3220 0%, #3d2815 55%, #352210 100%); border-radius:20px; padding:48px; color:#fff;" class="footer-form-card">
-        <h2 style="font-size:30px; font-weight:800; color:#fff; line-height:1.2;">Demandez votre bilan gratuit</h2>
-        <p style="margin-top:8px; color:#a08060; font-size:14px;">Réponse sous 24h par un conseiller dédié</p>
+      <div style="background:#F5EDE0; border:1px solid rgba(20,10,0,.06); border-radius:20px; padding:48px; color:#2A1A0A;" class="footer-form-card">
+        <h2 style="font-size:30px; font-weight:800; color:#2A1A0A; line-height:1.2;">Demandez votre bilan gratuit</h2>
+        <p style="margin-top:8px; color:rgba(20,10,0,.6); font-size:14px;">Réponse sous 24h par un conseiller dédié</p>
 
         <form id="footerForm" action="https://formsubmit.co/ajax/contact@odscourtage.com" method="POST" style="margin-top:28px; display:flex; flex-direction:column; gap:16px;">
           <input type="hidden" name="_subject" value="Nouvelle demande — ODS Courtage"/>
@@ -639,29 +640,29 @@
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;" class="footer-form-row">
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Prénom</label>
-              <input type="text" name="prenom" placeholder="Jean" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Prénom</label>
+              <input type="text" name="prenom" placeholder="Jean" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Nom</label>
-              <input type="text" name="nom" placeholder="Dupont" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Nom</label>
+              <input type="text" name="nom" placeholder="Dupont" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
           </div>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;" class="footer-form-row">
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Email</label>
-              <input type="email" name="email" placeholder="jean@exemple.fr" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Email</label>
+              <input type="email" name="email" placeholder="jean@exemple.fr" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Téléphone</label>
-              <input type="tel" name="telephone" placeholder="06 00 00 00 00" style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Téléphone</label>
+              <input type="tel" name="telephone" placeholder="06 00 00 00 00" style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
           </div>
 
           <div>
-            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Je suis intéressé(e) par</label>
-            <select name="solution" onchange="this.style.color=this.value?'#fff':'#4a3520'" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#4a3520; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; -webkit-appearance:none; cursor:pointer; box-sizing:border-box;">
+            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Je suis intéressé(e) par</label>
+            <select name="solution" onchange="this.style.color=this.value?'#2A1A0A':'rgba(20,10,0,.45)'" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:rgba(20,10,0,.45); font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; -webkit-appearance:none; cursor:pointer; box-sizing:border-box;">
               <option value="">Choisir une solution...</option>
               <option>Panneaux solaires</option>
               <option>Pompe à chaleur Air/Air</option>
@@ -674,18 +675,18 @@
           </div>
 
           <div>
-            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Message (optionnel)</label>
-            <textarea name="message" placeholder="Décrivez votre logement, vos besoins ou vos questions..." style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; min-height:110px; resize:vertical; box-sizing:border-box;"></textarea>
+            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Message (optionnel)</label>
+            <textarea name="message" placeholder="Décrivez votre logement, vos besoins ou vos questions..." style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; min-height:110px; resize:vertical; box-sizing:border-box;"></textarea>
           </div>
 
           <button type="submit" id="footerFormBtn" style="width:100%; padding:16px; background:linear-gradient(135deg,#f5b030,#e07020); border:none; border-radius:50px; color:#1a0a00; font-family:'Montserrat','Inter',sans-serif; font-size:15px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; box-shadow:0 0 28px rgba(240,160,48,.35);">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a0a00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2A1A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             Envoyer ma demande
           </button>
           <div id="footerFormSuccess" style="display:none;text-align:center;padding:20px;">
             <div style="font-size:40px;margin-bottom:12px;">&#10003;</div>
             <p style="font-size:16px;font-weight:600;color:#FFC300;">Demande envoyee avec succes !</p>
-            <p style="font-size:13px;color:rgba(251,251,244,.5);margin-top:6px;">Nous vous recontacterons sous 24h.</p>
+            <p style="font-size:13px;color:rgba(20,10,0,.5);margin-top:6px;">Nous vous recontacterons sous 24h.</p>
           </div>
         </form>
       </div>
@@ -746,7 +747,7 @@
         headers: { 'Accept': 'application/json' }
       }).then(function(r) { return r.json(); }).then(function(data) {
         if (data.success) {
-          form.innerHTML = '<div style="text-align:center;padding:40px 20px;"><div style="font-size:48px;margin-bottom:16px;">✓</div><p style="font-size:18px;font-weight:600;color:#fff;">Demande SAV envoyée</p><p style="margin-top:8px;color:rgba(251,251,244,.5);">Nous vous recontactons sous 24h ouvrées.</p></div>';
+          form.innerHTML = '<div style="text-align:center;padding:40px 20px;"><div style="font-size:48px;margin-bottom:16px;">✓</div><p style="font-size:18px;font-weight:600;color:#2A1A0A;">Demande SAV envoyée</p><p style="margin-top:8px;color:rgba(20,10,0,.5);">Nous vous recontactons sous 24h ouvrées.</p></div>';
         } else { btn.disabled = false; btn.textContent = 'Erreur, réessayez'; }
       }).catch(function() { btn.disabled = false; btn.textContent = 'Erreur, réessayez'; });
     });

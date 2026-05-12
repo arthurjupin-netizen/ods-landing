@@ -103,29 +103,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Roman&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--black:#2A1A0A;--dark-bg:#5A3D20;--orange:#FF7B00;--yellow:#FFC300;--white:#FBFBF4;--gray:#8A8070;--grad:linear-gradient(135deg,#FF7B00,#FFC300);--ease:cubic-bezier(.4,0,.2,1)}
+    :root{--black:#2A1A0A;--dark-bg:#F5EDE0;--cream:#F5EDE0;--orange:#FF7B00;--yellow:#FFC300;--white:#FBFBF4;--gray:#8A8070;--grad:linear-gradient(135deg,#FF7B00,#FFC300);--ease:cubic-bezier(.4,0,.2,1)}
     html{scroll-behavior:smooth}
-    body{font-family:'Inter',sans-serif;background:var(--dark-bg);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    body{font-family:'Inter',sans-serif;background:var(--white);color:var(--black);overflow-x:hidden;-webkit-font-smoothing:antialiased}
     h1,h2,h3{font-family:'Crimson Roman',serif}
     a{color:var(--orange)}
     .container{max-width:1200px;margin:0 auto;padding:0 24px}
     /* Topbar */
-    .topbar{background:rgba(20,10,0,.95);border-bottom:1px solid rgba(255,123,0,.15);padding:6px 0;text-align:center;font-size:13px;position:fixed;top:0;left:0;right:0;z-index:10001;transition:transform .3s}
+    .topbar{background:#F5EDE0;border-bottom:1px solid rgba(255,123,0,.2);padding:6px 0;text-align:center;font-size:13px;position:fixed;top:0;left:0;right:0;z-index:10001;transition:transform .3s}
     .topbar.hidden{transform:translateY(-100%)}
     .topbar-inner{display:flex;align-items:center;justify-content:center;gap:12px}
-    .topbar-label{color:rgba(251,251,244,.5);font-weight:500}
+    .topbar-label{color:rgba(20,10,0,.5);font-weight:500}
     .topbar-sep{width:1px;height:14px;background:rgba(255,123,0,.25)}
     .topbar-phone{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--orange);font-weight:600}
     /* Nav */
     .nav{position:fixed;top:33px;left:0;right:0;z-index:10000;padding:12px 0;transition:background .4s,box-shadow .4s,top .3s}
-    .nav.scrolled{background:rgba(20,10,0,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 2px 24px rgba(0,0,0,.3);top:0}
+    .nav.scrolled{background:#ffffff;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 2px 12px rgba(0,0,0,.08);top:0}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 24px}
     .nav-links{display:flex;gap:28px;align-items:center}
-    .nav-link{color:rgba(251,251,244,.7);text-decoration:none;font-size:14px;font-weight:500;transition:color .3s}
+    .nav-link{color:rgba(20,10,0,.7);text-decoration:none;font-size:14px;font-weight:500;transition:color .3s}
     .nav-link:hover{color:var(--orange)}
     .nav-cta{background:var(--grad);color:var(--black);padding:10px 24px;border-radius:50px;font-weight:600;font-size:13px;text-decoration:none;letter-spacing:.02em;transition:transform .3s,box-shadow .3s}
     .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,123,0,.3)}
-    .nav-contact-btn{color:rgba(251,251,244,.6);text-decoration:none;font-size:13px;font-weight:500;padding:10px 20px;border:1px solid rgba(251,251,244,.15);border-radius:50px;transition:border-color .3s,color .3s}
+    .nav-contact-btn{color:rgba(20,10,0,.6);text-decoration:none;font-size:13px;font-weight:500;padding:10px 20px;border:1px solid rgba(20,10,0,.15);border-radius:50px;transition:border-color .3s,color .3s}
     .nav-contact-btn:hover{border-color:var(--orange);color:var(--orange)}
     .nav-ctas{display:flex;gap:12px;align-items:center}
     .nav-burger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
@@ -140,9 +140,9 @@
     .hero-content{position:relative;z-index:1;text-align:center;max-width:800px;margin:0 auto}
     .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.15;margin-bottom:20px}
     .hero h1 .grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .hero-desc{font-size:17px;line-height:1.8;color:rgba(251,251,244,.65);max-width:650px;margin:0 auto 36px}
-    .hero-breadcrumb{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:rgba(251,251,244,.4);margin-bottom:32px}
-    .hero-breadcrumb a{color:rgba(251,251,244,.4);text-decoration:none}
+    .hero-desc{font-size:17px;line-height:1.8;color:rgba(20,10,0,.65);max-width:650px;margin:0 auto 36px}
+    .hero-breadcrumb{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:rgba(20,10,0,.4);margin-bottom:32px}
+    .hero-breadcrumb a{color:rgba(20,10,0,.4);text-decoration:none}
     .hero-breadcrumb a:hover{color:var(--orange)}
     .hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
     .btn-primary{background:var(--grad);color:var(--black);padding:16px 36px;border-radius:50px;font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:transform .3s,box-shadow .3s}
@@ -157,23 +157,23 @@
     .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
     /* Advantages */
     .adv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .adv-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px;transition:border-color .3s}
+    .adv-card{background:#fff;border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px;transition:border-color .3s}
     .adv-card:hover{border-color:rgba(255,123,0,0.4)}
     .adv-num{font-size:32px;font-weight:700;color:var(--orange);font-family:'Crimson Roman',serif;margin-bottom:8px}
     .adv-title{font-size:16px;font-weight:600;margin-bottom:8px}
-    .adv-desc{font-size:13px;line-height:1.7;color:rgba(251,251,244,.55)}
+    .adv-desc{font-size:13px;line-height:1.7;color:rgba(20,10,0,.55)}
     /* Stats */
     .stats-row{display:flex;justify-content:center;gap:48px;margin:48px 0;flex-wrap:wrap}
     .stat-item{text-align:center}
     .stat-val{font-size:36px;font-weight:700;color:var(--orange);font-family:'Crimson Roman',serif}
-    .stat-label{font-size:12px;color:rgba(251,251,244,.5);margin-top:4px}
+    .stat-label{font-size:12px;color:rgba(20,10,0,.5);margin-top:4px}
     /* FAQ */
     .faq-grid{display:grid;gap:16px;max-width:800px;margin:0 auto}
     /* CTA */
     .cta-section{text-align:center;padding:80px 0}
     .cta-box{background:radial-gradient(ellipse at 30% 100%,rgba(255,123,0,.12),transparent 60%);border:1px solid rgba(255,123,0,.2);border-radius:24px;padding:64px 48px;max-width:700px;margin:0 auto}
     /* Nearby */
-    .nearby{text-align:center;padding:48px 0;background:rgba(251,251,244,.02)}
+    .nearby{text-align:center;padding:48px 0;background:rgba(20,10,0,.02)}
     /* Footer */
     .footer-legal{background:#fff;border-top:1px solid #eee;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#999;flex-wrap:wrap;gap:12px}
     .footer-legal a{color:#999;text-decoration:none}
@@ -207,7 +207,7 @@
       .hero h1{font-size:1.6rem}
     }
     /* Mobile menu overlay */
-    .vm-menu{position:fixed;inset:0;background:#5A3D20;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:16px;padding:90px 24px 40px;overflow-y:auto;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-10px);transition:opacity .35s ease,visibility .35s ease,transform .35s ease}
+    .vm-menu{position:fixed;inset:0;background:#F5EDE0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:16px;padding:90px 24px 40px;overflow-y:auto;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-10px);transition:opacity .35s ease,visibility .35s ease,transform .35s ease}
     .vm-menu.open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
     .vm-menu a{font-family:'Inter',sans-serif;font-size:18px;font-weight:600;color:#FBFBF4;text-decoration:none;transition:color .2s ease,transform .2s ease,opacity .3s ease;opacity:0;transform:translateY(8px)}
     .vm-menu.open a{opacity:1;transform:translateY(0)}
@@ -228,7 +228,7 @@
     .vm-close{position:fixed;top:20px;right:24px;background:none;border:none;color:#FBFBF4;font-size:28px;cursor:pointer;z-index:100000;transition:transform .3s ease}
     .vm-close:hover{transform:rotate(90deg)}
   </style>
-<link rel="stylesheet" href="../mobile.css?v=7">
+<link rel="stylesheet" href="../mobile.css?v=8">
 </head>
 <body>
 
@@ -337,42 +337,42 @@
     <div class="section-eyebrow reveal">Nos solutions a Merignac</div>
     <h2 class="section-title reveal">Toutes nos installations<br>en <span style="color:var(--orange)">Gironde (33)</span></h2>
     <div class="services-grid reveal">
-        <a href="../solaire.html" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:border-color .3s,transform .3s;" onmouseover="this.style.borderColor='rgba(255,123,0,0.5)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,123,0,0.12)';this.style.transform='none'">
+        <a href="../solaire.html" style="background:#fff;border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:border-color .3s,transform .3s;" onmouseover="this.style.borderColor='rgba(255,123,0,0.5)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,123,0,0.12)';this.style.transform='none'">
           <div style="font-size:36px;margin-bottom:12px;">&#9728;</div>
-          <h3 style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:8px;font-family:'Inter',sans-serif;">Panneaux Solaires</h3>
-          <p style="font-size:13px;line-height:1.7;color:rgba(251,251,244,0.55);">Autoconsommation, revente surplus, jusqu'a 70% d'economie sur votre facture. Installateurs certifies RGE.</p>
+          <h3 style="font-size:16px;font-weight:600;color:var(--black);margin-bottom:8px;font-family:'Inter',sans-serif;">Panneaux Solaires</h3>
+          <p style="font-size:13px;line-height:1.7;color:rgba(20,10,0,0.55);">Autoconsommation, revente surplus, jusqu'a 70% d'economie sur votre facture. Installateurs certifies RGE.</p>
         </a>
-        <a href="../pac-air-air.html" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:border-color .3s,transform .3s;" onmouseover="this.style.borderColor='rgba(255,123,0,0.5)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,123,0,0.12)';this.style.transform='none'">
+        <a href="../pac-air-air.html" style="background:#fff;border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:border-color .3s,transform .3s;" onmouseover="this.style.borderColor='rgba(255,123,0,0.5)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,123,0,0.12)';this.style.transform='none'">
           <div style="font-size:36px;margin-bottom:12px;">&#10052;</div>
-          <h3 style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:8px;font-family:'Inter',sans-serif;">PAC Air-Air</h3>
-          <p style="font-size:13px;line-height:1.7;color:rgba(251,251,244,0.55);">Chauffage et climatisation reversible. COP jusqu'a 5, economies jusqu'a 70% sur le chauffage.</p>
+          <h3 style="font-size:16px;font-weight:600;color:var(--black);margin-bottom:8px;font-family:'Inter',sans-serif;">PAC Air-Air</h3>
+          <p style="font-size:13px;line-height:1.7;color:rgba(20,10,0,0.55);">Chauffage et climatisation reversible. COP jusqu'a 5, economies jusqu'a 70% sur le chauffage.</p>
         </a>
-        <a href="../pac-air-eau.html" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:border-color .3s,transform .3s;" onmouseover="this.style.borderColor='rgba(255,123,0,0.5)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,123,0,0.12)';this.style.transform='none'">
+        <a href="../pac-air-eau.html" style="background:#fff;border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:border-color .3s,transform .3s;" onmouseover="this.style.borderColor='rgba(255,123,0,0.5)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,123,0,0.12)';this.style.transform='none'">
           <div style="font-size:36px;margin-bottom:12px;">&#127777;</div>
-          <h3 style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:8px;font-family:'Inter',sans-serif;">PAC Air-Eau</h3>
-          <p style="font-size:13px;line-height:1.7;color:rgba(251,251,244,0.55);">Chauffage + eau chaude sanitaire. COP jusqu'a 4, economies jusqu'a 75%. Aides MaPrimeRenov'.</p>
+          <h3 style="font-size:16px;font-weight:600;color:var(--black);margin-bottom:8px;font-family:'Inter',sans-serif;">PAC Air-Eau</h3>
+          <p style="font-size:13px;line-height:1.7;color:rgba(20,10,0,0.55);">Chauffage + eau chaude sanitaire. COP jusqu'a 4, economies jusqu'a 75%. Aides MaPrimeRenov'.</p>
         </a>
-        <a href="../borne-recharge.html" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:border-color .3s,transform .3s;" onmouseover="this.style.borderColor='rgba(255,123,0,0.5)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,123,0,0.12)';this.style.transform='none'">
+        <a href="../borne-recharge.html" style="background:#fff;border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:border-color .3s,transform .3s;" onmouseover="this.style.borderColor='rgba(255,123,0,0.5)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,123,0,0.12)';this.style.transform='none'">
           <div style="font-size:36px;margin-bottom:12px;">&#9889;</div>
-          <h3 style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:8px;font-family:'Inter',sans-serif;">Borne de Recharge</h3>
-          <p style="font-size:13px;line-height:1.7;color:rgba(251,251,244,0.55);">Installation IRVE pour vehicule electrique. Puissance de 7 a 22 kW, credit d'impot 300 euros.</p>
+          <h3 style="font-size:16px;font-weight:600;color:var(--black);margin-bottom:8px;font-family:'Inter',sans-serif;">Borne de Recharge</h3>
+          <p style="font-size:13px;line-height:1.7;color:rgba(20,10,0,0.55);">Installation IRVE pour vehicule electrique. Puissance de 7 a 22 kW, credit d'impot 300 euros.</p>
         </a>
-        <a href="../batterie-stockage.html" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:border-color .3s,transform .3s;" onmouseover="this.style.borderColor='rgba(255,123,0,0.5)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,123,0,0.12)';this.style.transform='none'">
+        <a href="../batterie-stockage.html" style="background:#fff;border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:border-color .3s,transform .3s;" onmouseover="this.style.borderColor='rgba(255,123,0,0.5)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,123,0,0.12)';this.style.transform='none'">
           <div style="font-size:36px;margin-bottom:12px;">&#128267;</div>
-          <h3 style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:8px;font-family:'Inter',sans-serif;">Batterie Stockage</h3>
-          <p style="font-size:13px;line-height:1.7;color:rgba(251,251,244,0.55);">Stockez votre surplus solaire pour la nuit. Autonomie maximale, amortissement accelere.</p>
+          <h3 style="font-size:16px;font-weight:600;color:var(--black);margin-bottom:8px;font-family:'Inter',sans-serif;">Batterie Stockage</h3>
+          <p style="font-size:13px;line-height:1.7;color:rgba(20,10,0,0.55);">Stockez votre surplus solaire pour la nuit. Autonomie maximale, amortissement accelere.</p>
         </a>
-        <a href="../vmc-double-flux.html" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:border-color .3s,transform .3s;" onmouseover="this.style.borderColor='rgba(255,123,0,0.5)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,123,0,0.12)';this.style.transform='none'">
+        <a href="../vmc-double-flux.html" style="background:#fff;border:1px solid rgba(255,123,0,0.12);border-radius:16px;padding:32px 24px;text-decoration:none;text-align:center;transition:border-color .3s,transform .3s;" onmouseover="this.style.borderColor='rgba(255,123,0,0.5)';this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(255,123,0,0.12)';this.style.transform='none'">
           <div style="font-size:36px;margin-bottom:12px;">&#127744;</div>
-          <h3 style="font-size:16px;font-weight:600;color:var(--white);margin-bottom:8px;font-family:'Inter',sans-serif;">VMC Double Flux</h3>
-          <p style="font-size:13px;line-height:1.7;color:rgba(251,251,244,0.55);">Ventilation performante avec recuperation de chaleur. Jusqu'a 25% d'economies de chauffage.</p>
+          <h3 style="font-size:16px;font-weight:600;color:var(--black);margin-bottom:8px;font-family:'Inter',sans-serif;">VMC Double Flux</h3>
+          <p style="font-size:13px;line-height:1.7;color:rgba(20,10,0,0.55);">Ventilation performante avec recuperation de chaleur. Jusqu'a 25% d'economies de chauffage.</p>
         </a>
     </div>
   </div>
 </section>
 
 <!-- ADVANTAGES -->
-<section class="section" style="background:rgba(251,251,244,.02);">
+<section class="section" style="background:rgba(20,10,0,.02);">
   <div class="container">
     <div class="section-eyebrow reveal">Pourquoi ODS Courtage</div>
     <h2 class="section-title reveal">Les avantages de passer<br>par un <span style="color:var(--orange)">eco-courtier</span> a Merignac</h2>
@@ -407,25 +407,25 @@
     <div class="section-eyebrow reveal">Questions frequentes</div>
     <h2 class="section-title reveal">Vos questions sur l'energie<br>renouvelable a <span style="color:var(--orange)">Merignac</span></h2>
     <div class="faq-grid reveal">
-        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,123,0,0.15);border-radius:16px;padding:28px 32px;transition:border-color .3s;">
-          <h3 style="font-size:17px;font-weight:600;color:var(--white);margin-bottom:12px;font-family:'Inter',sans-serif;">Combien coute une installation de panneaux solaires a Merignac ?</h3>
-          <p style="font-size:14px;line-height:1.8;color:rgba(251,251,244,0.65);">A Merignac (33700), le cout moyen d'une installation solaire est de 8 500 euros pour 3 kWc, 13 500 euros pour 6 kWc et 17 500 euros pour 9 kWc (pose incluse). ODS Courtage negocie les meilleurs tarifs aupres d'installateurs RGE en Gironde et vous aide a obtenir toutes les aides disponibles.</p>
+        <div style="background:#fff;border:1px solid rgba(255,123,0,0.15);border-radius:16px;padding:28px 32px;transition:border-color .3s;">
+          <h3 style="font-size:17px;font-weight:600;color:var(--black);margin-bottom:12px;font-family:'Inter',sans-serif;">Combien coute une installation de panneaux solaires a Merignac ?</h3>
+          <p style="font-size:14px;line-height:1.8;color:rgba(20,10,0,0.65);">A Merignac (33700), le cout moyen d'une installation solaire est de 8 500 euros pour 3 kWc, 13 500 euros pour 6 kWc et 17 500 euros pour 9 kWc (pose incluse). ODS Courtage negocie les meilleurs tarifs aupres d'installateurs RGE en Gironde et vous aide a obtenir toutes les aides disponibles.</p>
         </div>
-        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,123,0,0.15);border-radius:16px;padding:28px 32px;transition:border-color .3s;">
-          <h3 style="font-size:17px;font-weight:600;color:var(--white);margin-bottom:12px;font-family:'Inter',sans-serif;">Quelles aides pour la renovation energetique a Merignac ?</h3>
-          <p style="font-size:14px;line-height:1.8;color:rgba(251,251,244,0.65);">Les habitants de Merignac et du departement Gironde (33) peuvent beneficier de MaPrimeRenov' (jusqu'a 10 000 euros), des primes CEE, du credit d'impot pour les bornes IRVE, de l'eco-PTZ (jusqu'a 50 000 euros) et de la TVA reduite a 5,5%. ODS Courtage s'occupe de toutes vos demarches.</p>
+        <div style="background:#fff;border:1px solid rgba(255,123,0,0.15);border-radius:16px;padding:28px 32px;transition:border-color .3s;">
+          <h3 style="font-size:17px;font-weight:600;color:var(--black);margin-bottom:12px;font-family:'Inter',sans-serif;">Quelles aides pour la renovation energetique a Merignac ?</h3>
+          <p style="font-size:14px;line-height:1.8;color:rgba(20,10,0,0.65);">Les habitants de Merignac et du departement Gironde (33) peuvent beneficier de MaPrimeRenov' (jusqu'a 10 000 euros), des primes CEE, du credit d'impot pour les bornes IRVE, de l'eco-PTZ (jusqu'a 50 000 euros) et de la TVA reduite a 5,5%. ODS Courtage s'occupe de toutes vos demarches.</p>
         </div>
-        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,123,0,0.15);border-radius:16px;padding:28px 32px;transition:border-color .3s;">
-          <h3 style="font-size:17px;font-weight:600;color:var(--white);margin-bottom:12px;font-family:'Inter',sans-serif;">Les panneaux solaires sont-ils rentables a Merignac ?</h3>
-          <p style="font-size:14px;line-height:1.8;color:rgba(251,251,244,0.65);">Oui, Merignac beneficie d'environ 2100 heures d'ensoleillement par an, ce qui permet une production solaire tres satisfaisante. En autoconsommation avec revente du surplus, le retour sur investissement est generalement de 8 a 12 ans pour une installation de 6 kWc.</p>
+        <div style="background:#fff;border:1px solid rgba(255,123,0,0.15);border-radius:16px;padding:28px 32px;transition:border-color .3s;">
+          <h3 style="font-size:17px;font-weight:600;color:var(--black);margin-bottom:12px;font-family:'Inter',sans-serif;">Les panneaux solaires sont-ils rentables a Merignac ?</h3>
+          <p style="font-size:14px;line-height:1.8;color:rgba(20,10,0,0.65);">Oui, Merignac beneficie d'environ 2100 heures d'ensoleillement par an, ce qui permet une production solaire tres satisfaisante. En autoconsommation avec revente du surplus, le retour sur investissement est generalement de 8 a 12 ans pour une installation de 6 kWc.</p>
         </div>
-        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,123,0,0.15);border-radius:16px;padding:28px 32px;transition:border-color .3s;">
-          <h3 style="font-size:17px;font-weight:600;color:var(--white);margin-bottom:12px;font-family:'Inter',sans-serif;">Comment choisir entre PAC air-air et air-eau a Merignac ?</h3>
-          <p style="font-size:14px;line-height:1.8;color:rgba(251,251,244,0.65);">A Merignac, la PAC air-air est ideale pour le chauffage et la climatisation (reversible), tandis que la PAC air-eau convient si vous avez aussi besoin d'eau chaude sanitaire. ODS Courtage realise un bilan energetique gratuit pour determiner la solution optimale pour votre logement.</p>
+        <div style="background:#fff;border:1px solid rgba(255,123,0,0.15);border-radius:16px;padding:28px 32px;transition:border-color .3s;">
+          <h3 style="font-size:17px;font-weight:600;color:var(--black);margin-bottom:12px;font-family:'Inter',sans-serif;">Comment choisir entre PAC air-air et air-eau a Merignac ?</h3>
+          <p style="font-size:14px;line-height:1.8;color:rgba(20,10,0,0.65);">A Merignac, la PAC air-air est ideale pour le chauffage et la climatisation (reversible), tandis que la PAC air-eau convient si vous avez aussi besoin d'eau chaude sanitaire. ODS Courtage realise un bilan energetique gratuit pour determiner la solution optimale pour votre logement.</p>
         </div>
-        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,123,0,0.15);border-radius:16px;padding:28px 32px;transition:border-color .3s;">
-          <h3 style="font-size:17px;font-weight:600;color:var(--white);margin-bottom:12px;font-family:'Inter',sans-serif;">ODS Courtage intervient-il a Merignac et ses environs ?</h3>
-          <p style="font-size:14px;line-height:1.8;color:rgba(251,251,244,0.65);">Oui, ODS Courtage intervient a Merignac (33700) et dans toute la Gironde (33). En tant que courtier en energie renouvelable, nous comparons et negocions les offres des meilleurs installateurs RGE de votre secteur. Bilan energetique gratuit et sans engagement.</p>
+        <div style="background:#fff;border:1px solid rgba(255,123,0,0.15);border-radius:16px;padding:28px 32px;transition:border-color .3s;">
+          <h3 style="font-size:17px;font-weight:600;color:var(--black);margin-bottom:12px;font-family:'Inter',sans-serif;">ODS Courtage intervient-il a Merignac et ses environs ?</h3>
+          <p style="font-size:14px;line-height:1.8;color:rgba(20,10,0,0.65);">Oui, ODS Courtage intervient a Merignac (33700) et dans toute la Gironde (33). En tant que courtier en energie renouvelable, nous comparons et negocions les offres des meilleurs installateurs RGE de votre secteur. Bilan energetique gratuit et sans engagement.</p>
         </div>
     </div>
   </div>
@@ -437,7 +437,7 @@
     <div class="cta-box reveal">
       <div class="section-eyebrow">Pret a economiser ?</div>
       <h2 style="font-size:clamp(1.6rem,3.5vw,2.2rem);margin:16px 0 12px;">Votre bilan energetique<br>gratuit a <span style="color:var(--orange)">Merignac</span></h2>
-      <p style="font-size:15px;color:rgba(251,251,244,.55);line-height:1.8;margin-bottom:32px;">Decouvrez combien vous pouvez economiser sur votre facture d'energie. Un eco-courtier ODS vous rappelle sous 24h pour analyser votre projet a Merignac.</p>
+      <p style="font-size:15px;color:rgba(20,10,0,.55);line-height:1.8;margin-bottom:32px;">Decouvrez combien vous pouvez economiser sur votre facture d'energie. Un eco-courtier ODS vous rappelle sous 24h pour analyser votre projet a Merignac.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
         <a href="../nous-contacter.html" class="btn-primary">Demander mon bilan gratuit</a>
         <a href="tel:0805037036" class="btn-secondary">Appeler gratuitement</a>
@@ -449,9 +449,9 @@
 <!-- NEARBY CITIES -->
 <section class="nearby">
   <div class="container reveal">
-    <p style="font-size:13px;color:rgba(251,251,244,.4);margin-bottom:12px;">ODS Courtage intervient aussi a :</p>
+    <p style="font-size:13px;color:rgba(20,10,0,.4);margin-bottom:12px;">ODS Courtage intervient aussi a :</p>
     <p style="font-size:14px;line-height:2;"><a href="bordeaux.html" style="color:var(--orange);text-decoration:none;font-weight:500;">Bordeaux</a> &middot; <a href="pessac.html" style="color:var(--orange);text-decoration:none;font-weight:500;">Pessac</a> &middot; <a href="talence.html" style="color:var(--orange);text-decoration:none;font-weight:500;">Talence</a> &middot; <a href="arcachon.html" style="color:var(--orange);text-decoration:none;font-weight:500;">Arcachon</a></p>
-    <p style="font-size:12px;color:rgba(251,251,244,.3);margin-top:16px;">Et dans toute la <strong>Nouvelle-Aquitaine</strong> : Charente-Maritime (17) &middot; Deux-Sevres (79) &middot; Vienne (86) &middot; Charente (16) &middot; Gironde (33) &middot; Dordogne (24) &middot; Lot-et-Garonne (47) &middot; Landes (40) &middot; Pyrenees-Atlantiques (64) &middot; Haute-Vienne (87) &middot; Correze (19) &middot; Creuse (23)</p>
+    <p style="font-size:12px;color:rgba(20,10,0,.3);margin-top:16px;">Et dans toute la <strong>Nouvelle-Aquitaine</strong> : Charente-Maritime (17) &middot; Deux-Sevres (79) &middot; Vienne (86) &middot; Charente (16) &middot; Gironde (33) &middot; Dordogne (24) &middot; Lot-et-Garonne (47) &middot; Landes (40) &middot; Pyrenees-Atlantiques (64) &middot; Haute-Vienne (87) &middot; Correze (19) &middot; Creuse (23)</p>
   </div>
 </section>
 

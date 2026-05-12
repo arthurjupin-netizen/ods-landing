@@ -44,7 +44,8 @@
 
     :root {
       --black:    #2A1A0A;
-      --dark-bg:  #5A3D20;
+      --dark-bg:  #F5EDE0;
+      --cream:    #F5EDE0;
       --orange:   #FF7B00;
       --yellow:   #FFC300;
       --white:    #FBFBF4;
@@ -107,10 +108,10 @@
     }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,123,0,0.5); }
     .btn-ghost {
-      background: transparent; color: var(--white);
-      border: 1.5px solid rgba(251,251,244,0.3); -webkit-backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+      background: transparent; color: var(--black);
+      border: 1.5px solid rgba(20,10,0,0.15); -webkit-backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
     }
-    .btn-ghost:hover { background: rgba(251,251,244,0.1); border-color: rgba(251,251,244,0.6); }
+    .btn-ghost:hover { background: rgba(20,10,0,0.1); border-color: rgba(20,10,0,0.6); }
 
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
@@ -138,7 +139,7 @@
     .topbar {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 1010; height: 40px;
-      background: rgba(60,35,15,0.96);
+      background: #F5EDE0;
       border-bottom: 1px solid rgba(255,123,0,0.18);
       display: flex; align-items: center; justify-content: center;
       transition: transform 0.35s ease;
@@ -151,7 +152,7 @@
     }
     .topbar-phone { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; transition: opacity .2s; }
     .topbar-phone:hover { opacity: .8; }
-    .topbar-number { font-size: 13.5px; font-weight: 700; color: var(--white); letter-spacing: .04em; font-family: 'Raleway', sans-serif; }
+    .topbar-number { font-size: 13.5px; font-weight: 700; color: var(--black); letter-spacing: .04em; font-family: 'Raleway', sans-serif; }
     .topbar-label { font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); padding: 3px 10px; background: rgba(255,123,0,.12); border: 1px solid rgba(255,123,0,.25); border-radius: 20px; }
     .topbar-sep { width: 1px; height: 16px; background: rgba(255,255,255,.12); }
 
@@ -189,7 +190,7 @@
 
     /* ─── HERO ─── */
     .page-hero {
-      min-height: 45vh; background: var(--dark-bg);
+      min-height: 45vh; background: var(--white);
       display: flex; align-items: center;
       position: relative; overflow: hidden;
       padding: 140px 0 64px;
@@ -208,10 +209,10 @@
     .hero-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--gradient); border-radius: 2px; }
     .page-hero h1 {
       font-size: clamp(30px, 4.5vw, 58px); font-weight: 900;
-      line-height: 1.1; letter-spacing: -0.03em; color: var(--white); margin-bottom: 20px;
+      line-height: 1.1; letter-spacing: -0.03em; color: var(--black); margin-bottom: 20px;
     }
     .page-hero .hero-sub {
-      font-size: 17px; line-height: 1.7; color: rgba(251,251,244,0.6);
+      font-size: 17px; line-height: 1.7; color: rgba(20,10,0,0.6);
       max-width: 580px;
     }
     .hero-content-inner { position: relative; z-index: 1; }
@@ -348,7 +349,7 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       display: block; margin-bottom: 6px; text-decoration: none;
     }
-    .phone-hours { font-size: 13px; color: rgba(251,251,244,0.45); margin-bottom: 20px; }
+    .phone-hours { font-size: 13px; color: rgba(20,10,0,0.45); margin-bottom: 20px; }
     .phone-icon-row {
       display: flex; align-items: center; gap: 12px;
     }
@@ -358,7 +359,7 @@
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
     .phone-free-badge {
-      font-size: 11px; font-weight: 600; color: rgba(251,251,244,0.55); letter-spacing: .04em;
+      font-size: 11px; font-weight: 600; color: rgba(20,10,0,0.55); letter-spacing: .04em;
     }
 
     /* Address card */
@@ -405,7 +406,7 @@
     }
     .why-header { text-align: center; margin-bottom: 56px; }
     .why-eyebrow { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
-    .why-title { font-family: 'Crimson Roman', serif; font-size: clamp(26px, 3vw, 42px); color: var(--white); line-height: 1.15; }
+    .why-title { font-family: 'Crimson Roman', serif; font-size: clamp(26px, 3vw, 42px); color: var(--black); line-height: 1.15; }
     .why-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .why-card {
       background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
@@ -418,8 +419,8 @@
       background: rgba(255,123,0,0.12); border: 1px solid rgba(255,123,0,0.2);
       display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
     }
-    .why-card-title { font-family: 'Crimson Roman', serif; font-size: 22px; color: var(--white); margin-bottom: 10px; }
-    .why-card-desc { font-size: 14px; color: rgba(251,251,244,0.55); line-height: 1.75; }
+    .why-card-title { font-family: 'Crimson Roman', serif; font-size: 22px; color: var(--black); margin-bottom: 10px; }
+    .why-card-desc { font-size: 14px; color: rgba(20,10,0,0.55); line-height: 1.75; }
 
     /* ─── FOOTER ─── */
     footer {
@@ -438,33 +439,33 @@
       gap: 80px; padding-bottom: 64px; position: relative; z-index: 1;
     }
     .footer-brand .logo { margin-bottom: 20px; display: block; }
-    .footer-tagline { font-size: 15px; line-height: 1.7; color: rgba(251,251,244,0.4); max-width: 300px; margin-bottom: 28px; }
+    .footer-tagline { font-size: 15px; line-height: 1.7; color: rgba(20,10,0,0.4); max-width: 300px; margin-bottom: 28px; }
     .footer-socials { display: flex; gap: 12px; margin-bottom: 28px; }
     .social-btn {
-      width: 40px; height: 40px; background: rgba(251,251,244,0.06);
-      border: 1px solid rgba(251,251,244,0.1); border-radius: 10px;
+      width: 40px; height: 40px; background: rgba(20,10,0,0.06);
+      border: 1px solid rgba(20,10,0,0.1); border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      color: rgba(251,251,244,0.5); cursor: pointer; transition: var(--transition); text-decoration: none;
+      color: rgba(20,10,0,0.5); cursor: pointer; transition: var(--transition); text-decoration: none;
     }
     .social-btn:hover { background: rgba(255,123,0,0.15); border-color: rgba(255,123,0,0.4); color: var(--orange); }
     .footer-contact-info { display: flex; flex-direction: column; gap: 12px; }
-    .footer-contact-item { display: flex; align-items: center; gap: 12px; color: rgba(251,251,244,0.4); font-size: 14px; }
+    .footer-contact-item { display: flex; align-items: center; gap: 12px; color: rgba(20,10,0,0.4); font-size: 14px; }
 
     .footer-nav-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
     .footer-nav-col-title { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; }
     .footer-nav-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .footer-nav-links li a { font-size: 14px; color: rgba(251,251,244,0.45); text-decoration: none; transition: color .2s; }
-    .footer-nav-links li a:hover { color: var(--white); }
+    .footer-nav-links li a { font-size: 14px; color: rgba(20,10,0,0.45); text-decoration: none; transition: color .2s; }
+    .footer-nav-links li a:hover { color: var(--black); }
 
     .footer-bottom {
-      border-top: 1px solid rgba(251,251,244,0.06); padding: 24px 0;
+      border-top: 1px solid rgba(20,10,0,0.06); padding: 24px 0;
       display: flex; align-items: center; justify-content: space-between;
       position: relative; z-index: 1;
     }
-    .footer-bottom p { font-size: 13px; color: rgba(251,251,244,0.25); }
+    .footer-bottom p { font-size: 13px; color: rgba(20,10,0,0.25); }
     .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; color: rgba(251,251,244,0.25); text-decoration: none; transition: color var(--transition); }
-    .footer-links a:hover { color: rgba(251,251,244,0.6); }
+    .footer-links a { font-size: 13px; color: rgba(20,10,0,0.25); text-decoration: none; transition: color var(--transition); }
+    .footer-links a:hover { color: rgba(20,10,0,0.6); }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1024px) {
@@ -487,7 +488,7 @@
       .footer-nav-cols { grid-template-columns: 1fr; gap: 28px; }
     }
   @media(hover:none),(pointer:coarse){#cursor,.cursor,#cursorRing,.cursor-ring{display:none!important;width:0!important;height:0!important}}</style>
-<link rel="stylesheet" href="mobile.css?v=7">
+<link rel="stylesheet" href="mobile.css?v=8">
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Contact — ODS Courtage | Bilan Énergétique Gratuit" />
   <meta name="twitter:description" content="Contactez ODS Courtage pour votre projet d'énergie renouvelable. Bilan gratuit sous 24h. Numéro vert : 0 805 037 036." />
@@ -839,9 +840,9 @@
       </div>
 
       <!-- DROITE : FORMULAIRE SOMBRE -->
-      <div style="background:radial-gradient(ellipse at 30% 110%, #4a3220 0%, #3d2815 55%, #352210 100%); border-radius:20px; padding:48px; color:#fff;" class="footer-form-card">
-        <h2 style="font-size:30px; font-weight:800; color:#fff; line-height:1.2;">Demandez votre bilan gratuit</h2>
-        <p style="margin-top:8px; color:#a08060; font-size:14px;">Réponse sous 24h par un conseiller dédié</p>
+      <div style="background:#F5EDE0; border:1px solid rgba(20,10,0,.06); border-radius:20px; padding:48px; color:#2A1A0A;" class="footer-form-card">
+        <h2 style="font-size:30px; font-weight:800; color:#2A1A0A; line-height:1.2;">Demandez votre bilan gratuit</h2>
+        <p style="margin-top:8px; color:rgba(20,10,0,.6); font-size:14px;">Réponse sous 24h par un conseiller dédié</p>
 
         <form id="footerForm" action="https://formsubmit.co/ajax/contact@odscourtage.com" method="POST" style="margin-top:28px; display:flex; flex-direction:column; gap:16px;">
           <input type="hidden" name="_subject" value="Nouvelle demande — ODS Courtage"/>
@@ -851,29 +852,29 @@
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;" class="footer-form-row">
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Prénom</label>
-              <input type="text" name="prenom" placeholder="Jean" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Prénom</label>
+              <input type="text" name="prenom" placeholder="Jean" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Nom</label>
-              <input type="text" name="nom" placeholder="Dupont" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Nom</label>
+              <input type="text" name="nom" placeholder="Dupont" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
           </div>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;" class="footer-form-row">
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Email</label>
-              <input type="email" name="email" placeholder="jean@exemple.fr" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Email</label>
+              <input type="email" name="email" placeholder="jean@exemple.fr" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Téléphone</label>
-              <input type="tel" name="telephone" placeholder="06 00 00 00 00" style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Téléphone</label>
+              <input type="tel" name="telephone" placeholder="06 00 00 00 00" style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
           </div>
 
           <div>
-            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Je suis intéressé(e) par</label>
-            <select name="solution" onchange="this.style.color=this.value?'#fff':'#4a3520'" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#4a3520; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; -webkit-appearance:none; cursor:pointer; box-sizing:border-box;">
+            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Je suis intéressé(e) par</label>
+            <select name="solution" onchange="this.style.color=this.value?'#2A1A0A':'rgba(20,10,0,.45)'" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:rgba(20,10,0,.45); font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; -webkit-appearance:none; cursor:pointer; box-sizing:border-box;">
               <option value="">Choisir une solution...</option>
               <option>Panneaux solaires</option>
               <option>Pompe à chaleur Air/Air</option>
@@ -886,18 +887,18 @@
           </div>
 
           <div>
-            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Message (optionnel)</label>
-            <textarea name="message" placeholder="Décrivez votre logement, vos besoins ou vos questions..." style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; min-height:110px; resize:vertical; box-sizing:border-box;"></textarea>
+            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Message (optionnel)</label>
+            <textarea name="message" placeholder="Décrivez votre logement, vos besoins ou vos questions..." style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; min-height:110px; resize:vertical; box-sizing:border-box;"></textarea>
           </div>
 
           <button type="submit" id="footerFormBtn" style="width:100%; padding:16px; background:linear-gradient(135deg,#f5b030,#e07020); border:none; border-radius:50px; color:#1a0a00; font-family:'Montserrat','Inter',sans-serif; font-size:15px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; box-shadow:0 0 28px rgba(240,160,48,.35);">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a0a00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2A1A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             Envoyer ma demande
           </button>
           <div id="footerFormSuccess" style="display:none;text-align:center;padding:20px;">
             <div style="font-size:40px;margin-bottom:12px;">&#10003;</div>
             <p style="font-size:16px;font-weight:600;color:#FFC300;">Demande envoyee avec succes !</p>
-            <p style="font-size:13px;color:rgba(251,251,244,.5);margin-top:6px;">Nous vous recontacterons sous 24h.</p>
+            <p style="font-size:13px;color:rgba(20,10,0,.5);margin-top:6px;">Nous vous recontacterons sous 24h.</p>
           </div>
         </form>
       </div>

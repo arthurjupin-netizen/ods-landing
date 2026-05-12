@@ -44,7 +44,8 @@
 
     :root {
       --black:    #2A1A0A;
-      --dark-bg:  #5A3D20;
+      --dark-bg:  #F5EDE0;
+      --cream:    #F5EDE0;
       --orange:   #FF7B00;
       --yellow:   #FFC300;
       --white:    #FBFBF4;
@@ -116,11 +117,11 @@
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,123,0,0.5); }
     .btn-ghost {
       background: transparent;
-      color: var(--white);
-      border: 1.5px solid rgba(251,251,244,0.3);
+      color: var(--black);
+      border: 1.5px solid rgba(20,10,0,0.15);
       -webkit-backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
     }
-    .btn-ghost:hover { background: rgba(251,251,244,0.1); border-color: rgba(251,251,244,0.6); }
+    .btn-ghost:hover { background: rgba(20,10,0,0.1); border-color: rgba(20,10,0,0.6); }
 
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
@@ -128,7 +129,7 @@
     .topbar {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 1010; height: 40px;
-      background: rgba(60,35,15,0.96);
+      background: #F5EDE0;
       border-bottom: 1px solid rgba(255,123,0,0.18);
       display: flex; align-items: center; justify-content: center;
       transition: transform 0.35s ease;
@@ -141,7 +142,7 @@
     }
     .topbar-phone { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; transition: opacity .2s; }
     .topbar-phone:hover { opacity: .8; }
-    .topbar-number { font-size: 13.5px; font-weight: 700; color: var(--white); letter-spacing: .04em; }
+    .topbar-number { font-size: 13.5px; font-weight: 700; color: var(--black); letter-spacing: .04em; }
     .topbar-label {
       font-size: 10px; font-weight: 600; letter-spacing: .14em;
       text-transform: uppercase; color: var(--orange);
@@ -171,7 +172,7 @@
     .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; flex: 1; justify-content: center; }
     .nav-links a {
       font-size: 12.5px; font-weight: 500;
-      color: rgba(251,251,244,0.7);
+      color: rgba(20,10,0,0.7);
       text-decoration: none; transition: color var(--transition);
       white-space: nowrap; position: relative;
     }
@@ -181,7 +182,7 @@
       transform: scaleX(0); transform-origin: left;
       transition: transform .25s ease; border-radius: 2px;
     }
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover { color: var(--black); }
     .nav-links a:hover::after { transform: scaleX(1); }
     .nav-links a.active { color: var(--orange); }
     .nav-links a.active::after { transform: scaleX(1); }
@@ -199,7 +200,7 @@
 
     /* ─── HERO ─── */
     .page-hero {
-      background: var(--dark-bg);
+      background: var(--white);
       padding: 180px 0 100px;
       position: relative; overflow: hidden;
       text-align: center;
@@ -236,12 +237,12 @@
     .page-hero h1 {
       font-size: clamp(36px, 5vw, 68px);
       line-height: 1.1; letter-spacing: -0.02em;
-      color: var(--white); margin-bottom: 24px;
+      color: var(--black); margin-bottom: 24px;
       max-width: 800px; margin-left: auto; margin-right: auto;
     }
     .page-hero-sub {
       font-size: 18px; line-height: 1.7;
-      color: rgba(251,251,244,0.6);
+      color: rgba(20,10,0,0.6);
       max-width: 640px; margin: 0 auto;
     }
 
@@ -313,7 +314,7 @@
 
     /* ─── STATS SECTION ─── */
     .stats-section {
-      background: var(--dark-bg);
+      background: var(--white);
       padding: 110px 0;
       position: relative; overflow: hidden;
     }
@@ -334,18 +335,18 @@
     }
     .stats-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--gradient); border-radius: 2px; }
     .stats-title {
-      font-size: clamp(32px, 4vw, 52px); color: var(--white);
+      font-size: clamp(32px, 4vw, 52px); color: var(--black);
       line-height: 1.15; letter-spacing: -0.02em;
     }
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 2px;
-      background: rgba(251,251,244,0.06);
+      background: rgba(20,10,0,0.06);
       border-radius: 24px; overflow: hidden;
     }
     .stat-item {
-      background: rgba(60,35,15,0.95);
+      background: var(--white);
       padding: 48px 32px; text-align: center;
       transition: background var(--transition);
     }
@@ -448,7 +449,7 @@
 
     /* ─── QUOTE SECTION ─── */
     .quote-section {
-      background: var(--dark-bg);
+      background: var(--white);
       padding: 110px 0;
       position: relative; overflow: hidden;
     }
@@ -477,7 +478,7 @@
       font-family: 'Crimson Roman', serif;
       font-size: clamp(22px, 3vw, 36px);
       line-height: 1.45;
-      color: var(--white);
+      color: var(--black);
       margin-bottom: 32px;
     }
     .quote-author {
@@ -490,8 +491,8 @@
       font-family: 'Crimson Roman', serif; font-size: 20px; color: var(--black);
     }
     .quote-author-info { text-align: left; }
-    .quote-author-name { font-weight: 700; color: var(--white); font-size: 15px; }
-    .quote-author-role { font-size: 13px; color: rgba(251,251,244,0.4); margin-top: 2px; }
+    .quote-author-name { font-weight: 700; color: var(--black); font-size: 15px; }
+    .quote-author-role { font-size: 13px; color: rgba(20,10,0,0.4); margin-top: 2px; }
 
     /* ─── CTA SECTION ─── */
     .cta-section {
@@ -504,7 +505,7 @@
 
     /* ─── FOOTER ─── */
     footer {
-      background: var(--dark-bg);
+      background: var(--white);
       padding: 80px 0 0;
       position: relative; overflow: hidden;
     }
@@ -520,33 +521,33 @@
       gap: 80px; padding-bottom: 60px;
       position: relative; z-index: 1;
     }
-    .footer-tagline { font-size: 15px; line-height: 1.7; color: rgba(251,251,244,0.4); max-width: 320px; margin-bottom: 36px; margin-top: 20px; }
+    .footer-tagline { font-size: 15px; line-height: 1.7; color: rgba(20,10,0,0.4); max-width: 320px; margin-bottom: 36px; margin-top: 20px; }
     .footer-socials { display: flex; gap: 12px; }
     .social-btn {
       width: 40px; height: 40px;
-      background: rgba(251,251,244,0.06);
-      border: 1px solid rgba(251,251,244,0.1);
+      background: rgba(20,10,0,0.06);
+      border: 1px solid rgba(20,10,0,0.1);
       border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      color: rgba(251,251,244,0.5); cursor: pointer;
+      color: rgba(20,10,0,0.5); cursor: pointer;
       transition: var(--transition); text-decoration: none;
     }
     .social-btn:hover { background: rgba(255,123,0,0.15); border-color: rgba(255,123,0,0.4); color: var(--orange); }
     .footer-nav-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    .footer-nav-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(251,251,244,0.3); margin-bottom: 20px; }
+    .footer-nav-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(20,10,0,0.3); margin-bottom: 20px; }
     .footer-nav-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .footer-nav-col ul li a { font-size: 14px; color: rgba(251,251,244,0.5); text-decoration: none; transition: color var(--transition); }
-    .footer-nav-col ul li a:hover { color: var(--white); }
+    .footer-nav-col ul li a { font-size: 14px; color: rgba(20,10,0,0.5); text-decoration: none; transition: color var(--transition); }
+    .footer-nav-col ul li a:hover { color: var(--black); }
     .footer-bottom {
-      border-top: 1px solid rgba(251,251,244,0.06);
+      border-top: 1px solid rgba(20,10,0,0.06);
       padding: 24px 0;
       display: flex; align-items: center; justify-content: space-between;
       position: relative; z-index: 1;
     }
-    .footer-bottom p { font-size: 13px; color: rgba(251,251,244,0.25); }
+    .footer-bottom p { font-size: 13px; color: rgba(20,10,0,0.25); }
     .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; color: rgba(251,251,244,0.25); text-decoration: none; transition: color var(--transition); }
-    .footer-links a:hover { color: rgba(251,251,244,0.6); }
+    .footer-links a { font-size: 13px; color: rgba(20,10,0,0.25); text-decoration: none; transition: color var(--transition); }
+    .footer-links a:hover { color: rgba(20,10,0,0.6); }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1024px) {
@@ -594,7 +595,7 @@
     .nav.scrolled { top: 0; }
     .nav + *:not(.hero):not(.page-hero):not(.legal-hero):not(#hero) { padding-top:64px; }
   @media(hover:none),(pointer:coarse){#cursor,.cursor,#cursorRing,.cursor-ring{display:none!important;width:0!important;height:0!important}}</style>
-<link rel="stylesheet" href="mobile.css?v=7">
+<link rel="stylesheet" href="mobile.css?v=8">
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Nos Valeurs — ODS Courtage" />
   <meta name="twitter:description" content="Transparence, indépendance et accompagnement personnalisé. ODS Courtage, votre éco-courtier pour la transition énergétique." />
@@ -816,7 +817,7 @@
   <div class="container">
     <div class="stats-header reveal">
       <div class="stats-eyebrow">Nos résultats</div>
-      <h2 class="stats-title" style="color:var(--white);">ODS en chiffres</h2>
+      <h2 class="stats-title" style="color:var(--black);">ODS en chiffres</h2>
     </div>
 
     <div class="stats-grid reveal">
@@ -841,7 +842,7 @@
 </section>
 
 <!-- ═══════════ NOS ENGAGEMENTS ═══════════ -->
-<section style="padding:100px 0;background:radial-gradient(ellipse at 50% 110%, #4a3220 0%, #3d2815 60%);">
+<section style="padding:100px 0;background:#F5EDE0;">
   <div class="container">
     <div class="timeline-header reveal" style="margin-bottom:60px;">
       <div class="section-label">Ce qui nous différencie</div>
@@ -854,7 +855,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF7B00" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
         <h3 style="font-family:'Crimson Roman',serif;font-size:22px;color:#FBFBF4;margin-bottom:12px;">Un éco-courtier dédié</h3>
-        <p style="font-size:14px;color:rgba(251,251,244,0.6);line-height:1.7;">Un interlocuteur unique qui vous accompagne de A à Z. Il compare, négocie et coordonne tout pour vous.</p>
+        <p style="font-size:14px;color:rgba(20,10,0,0.6);line-height:1.7;">Un interlocuteur unique qui vous accompagne de A à Z. Il compare, négocie et coordonne tout pour vous.</p>
       </div>
 
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,123,0,0.15);border-radius:20px;padding:40px 32px;text-align:center;">
@@ -862,7 +863,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF7B00" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <h3 style="font-family:'Crimson Roman',serif;font-size:22px;color:#FBFBF4;margin-bottom:12px;">100% indépendant</h3>
-        <p style="font-size:14px;color:rgba(251,251,244,0.6);line-height:1.7;">On travaille pour vous, pas pour les installateurs. Notre conseil est objectif et dans votre seul intérêt.</p>
+        <p style="font-size:14px;color:rgba(20,10,0,0.6);line-height:1.7;">On travaille pour vous, pas pour les installateurs. Notre conseil est objectif et dans votre seul intérêt.</p>
       </div>
 
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,123,0,0.15);border-radius:20px;padding:40px 32px;text-align:center;">
@@ -870,7 +871,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF7B00" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
         <h3 style="font-family:'Crimson Roman',serif;font-size:22px;color:#FBFBF4;margin-bottom:12px;">Zéro chantier abandonné</h3>
-        <p style="font-size:14px;color:rgba(251,251,244,0.6);line-height:1.7;">Chaque projet est suivi jusqu'à la fin. Si un artisan fait défaut, notre contrat C.S.E.R prend le relais.</p>
+        <p style="font-size:14px;color:rgba(20,10,0,0.6);line-height:1.7;">Chaque projet est suivi jusqu'à la fin. Si un artisan fait défaut, notre contrat C.S.E.R prend le relais.</p>
       </div>
     </div>
   </div>
@@ -950,9 +951,9 @@
       </div>
 
       <!-- DROITE : FORMULAIRE SOMBRE -->
-      <div style="background:radial-gradient(ellipse at 30% 110%, #4a3220 0%, #3d2815 55%, #352210 100%); border-radius:20px; padding:48px; color:#fff;" class="footer-form-card">
-        <h2 style="font-size:30px; font-weight:800; color:#fff; line-height:1.2;">Demandez votre bilan gratuit</h2>
-        <p style="margin-top:8px; color:#a08060; font-size:14px;">Réponse sous 24h par un conseiller dédié</p>
+      <div style="background:#F5EDE0; border:1px solid rgba(20,10,0,.06); border-radius:20px; padding:48px; color:#2A1A0A;" class="footer-form-card">
+        <h2 style="font-size:30px; font-weight:800; color:#2A1A0A; line-height:1.2;">Demandez votre bilan gratuit</h2>
+        <p style="margin-top:8px; color:rgba(20,10,0,.6); font-size:14px;">Réponse sous 24h par un conseiller dédié</p>
 
         <form id="footerForm" action="https://formsubmit.co/ajax/contact@odscourtage.com" method="POST" style="margin-top:28px; display:flex; flex-direction:column; gap:16px;">
           <input type="hidden" name="_subject" value="Nouvelle demande — ODS Courtage"/>
@@ -962,29 +963,29 @@
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;" class="footer-form-row">
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Prénom</label>
-              <input type="text" name="prenom" placeholder="Jean" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Prénom</label>
+              <input type="text" name="prenom" placeholder="Jean" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Nom</label>
-              <input type="text" name="nom" placeholder="Dupont" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Nom</label>
+              <input type="text" name="nom" placeholder="Dupont" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
           </div>
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;" class="footer-form-row">
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Email</label>
-              <input type="email" name="email" placeholder="jean@exemple.fr" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Email</label>
+              <input type="email" name="email" placeholder="jean@exemple.fr" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
             <div>
-              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Téléphone</label>
-              <input type="tel" name="telephone" placeholder="06 00 00 00 00" style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
+              <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Téléphone</label>
+              <input type="tel" name="telephone" placeholder="06 00 00 00 00" style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; box-sizing:border-box;">
             </div>
           </div>
 
           <div>
-            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Je suis intéressé(e) par</label>
-            <select name="solution" onchange="this.style.color=this.value?'#fff':'#4a3520'" required style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#4a3520; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; -webkit-appearance:none; cursor:pointer; box-sizing:border-box;">
+            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Je suis intéressé(e) par</label>
+            <select name="solution" onchange="this.style.color=this.value?'#2A1A0A':'rgba(20,10,0,.45)'" required style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:rgba(20,10,0,.45); font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; -webkit-appearance:none; cursor:pointer; box-sizing:border-box;">
               <option value="">Choisir une solution...</option>
               <option>Panneaux solaires</option>
               <option>Pompe à chaleur Air/Air</option>
@@ -997,18 +998,18 @@
           </div>
 
           <div>
-            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:#806040; text-transform:uppercase; margin-bottom:6px;">Message (optionnel)</label>
-            <textarea name="message" placeholder="Décrivez votre logement, vos besoins ou vos questions..." style="width:100%; background:rgba(255,255,255,.06); border:1px solid #2e1f10; border-radius:10px; padding:13px 15px; color:#fff; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; min-height:110px; resize:vertical; box-sizing:border-box;"></textarea>
+            <label style="display:block; font-size:11px; font-weight:700; letter-spacing:.1em; color:rgba(20,10,0,.65); text-transform:uppercase; margin-bottom:6px;">Message (optionnel)</label>
+            <textarea name="message" placeholder="Décrivez votre logement, vos besoins ou vos questions..." style="width:100%; background:#fff; border:1px solid rgba(20,10,0,.12); border-radius:10px; padding:13px 15px; color:#2A1A0A; font-family:'Montserrat','Inter',sans-serif; font-size:14px; outline:none; min-height:110px; resize:vertical; box-sizing:border-box;"></textarea>
           </div>
 
           <button type="submit" id="footerFormBtn" style="width:100%; padding:16px; background:linear-gradient(135deg,#f5b030,#e07020); border:none; border-radius:50px; color:#1a0a00; font-family:'Montserrat','Inter',sans-serif; font-size:15px; font-weight:700; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; box-shadow:0 0 28px rgba(240,160,48,.35);">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1a0a00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2A1A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             Envoyer ma demande
           </button>
           <div id="footerFormSuccess" style="display:none;text-align:center;padding:20px;">
             <div style="font-size:40px;margin-bottom:12px;">&#10003;</div>
             <p style="font-size:16px;font-weight:600;color:#FFC300;">Demande envoyee avec succes !</p>
-            <p style="font-size:13px;color:rgba(251,251,244,.5);margin-top:6px;">Nous vous recontacterons sous 24h.</p>
+            <p style="font-size:13px;color:rgba(20,10,0,.5);margin-top:6px;">Nous vous recontacterons sous 24h.</p>
           </div>
         </form>
       </div>
